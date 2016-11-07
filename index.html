@@ -122,7 +122,7 @@
                 <div class="col-sm-4">
                     <p class="text-center"><strong>Nom</strong></p><br>
                     <a href="#membre" data-toggle="collapse">
-                        <img src="image/avatar.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+                        <img src="image/avatar.jpg" class="img-circle person" alt="Président" width="255" height="255">
                     </a>
                     <div id="membre" class="collapse">
                         <p>Président</p>
@@ -133,7 +133,7 @@
                 <div class="col-sm-4">
                     <p class="text-center"><strong>Nom</strong></p><br>
                     <a href="#membre2" data-toggle="collapse">
-                        <img src="image/avatar3.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+                        <img src="image/avatar3.jpg" class="img-circle person" alt="Secrétaire" width="255" height="255">
                     </a>
                     <div id="membre2" class="collapse">
                         <p>Secrétaire</p>
@@ -144,7 +144,7 @@
                 <div class="col-sm-4">
                     <p class="text-center"><strong>Nom</strong></p><br>
                     <a href="#membre3" data-toggle="collapse">
-                        <img src="image/avatar2.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+                        <img src="image/avatar2.jpg" class="img-circle person" alt="Trésorier" width="255" height="255">
                     </a>
                     <div id="membre3" class="collapse">
                         <p>Trésorier</p>
@@ -155,7 +155,6 @@
             </div>
         </div>
     </section>
-
     <!--Evenement-->
     <section class="événements">
         <div id="tour" class="bg-1">
@@ -163,14 +162,13 @@
                 <h3 class="text-center">Evenements à venir</h3>
                 <p class="text-center">Lorem ipsum we'll play you some music.<br> Remember to book your tickets!</p>
                 <ul class="list-group">
-                    <li class="list-group-item">Novembre <span class="badge">3</span></li>
+                    <li class="list-group-item" data-toggle="modal" data-target="#myModal">Novembre <span class="badge">3</span></li>
                     <li class="list-group-item">Décembre <span class="badge">3</span></li>
                     <li class="list-group-item">Janvier <span class="badge" data-toggle="modal" data-target="#myModal">3</span></li>
                 </ul>
 
             </div>
-
-            <!-- Modal -->
+            <!-- Modal agenda mois-->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
 
@@ -178,21 +176,23 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">×</button>
-                            <h4><span class="glyphicon glyphicon-lock"></span> Rennes Sud</h4>
+                            <h3><i class="fa fa-calendar fa-1x" aria-hidden="true"></i> Les RDV</h3>
                         </div>
                         <div class="modal-body">
                             <div class="row text-center">
                                 <div class="col-sm-4">
                                     <div class="thumbnail">
-                                        <img src="paris.jpg" alt="Rennes Sud" width="400" height="300">
+                                        <img src="image/agenda1.jpg" alt="Rennes Sud" width="700" height="500">
+                                        <p><strong>Evénement x</strong></p>
                                         <p><strong>Rennes Sud</strong></p>
                                         <p>Vendredi 27 Novembre 2016</p>
-                                        <button class="btn" data-toggle="modal" data-target="#myModal">+ de détails</button>
+                                        <button class="btn" data-toggle="modal" data-target="#Modal2">+ de détails</button>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="thumbnail">
-                                        <img src="newyork.jpg" alt="Rennes Nord" width="400" height="300">
+                                        <img src="image/agenda1.jpg" alt="Rennes Nord" width="700" height="500">
+                                        <p><strong>Evénement y</strong></p>
                                         <p><strong>Rennes Nord</strong></p>
                                         <p>Samedi 28 Novembre 2016</p>
                                         <button class="btn" data-toggle="modal" data-target="#myModal">+ de détails</button>
@@ -200,10 +200,33 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="thumbnail">
-                                        <img src="sanfran.jpg" alt="Rennes Est" width="400" height="300">
+                                        <img src="image/agenda1.jpg" alt="Rennes Est" width="700" height="500">
+                                        <p><strong>Evénement z</strong></p>
                                         <p><strong>Rennes Est</strong></p>
                                         <p>Dimanche 29 Novembre 2016</p>
                                         <button class="btn" data-toggle="modal" data-target="#myModal">+ de détails</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal agenda jour -->
+            <div class="modal fade" id="Modal2" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <h4><span class="glyphicon glyphicon-lock"></span> Rennes Sud</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row text-center">
+                                <div class="col-sm-12">
+                                    <div class="thumbnail">
+                                        <img src="paris.jpg" alt="Paris" width="400" height="300">
+                                        <p><strong>Description : </strong></p>
+                                        <p>Vendredi 27 Novembre 2016</p>
                                     </div>
                                 </div>
                             </div>
