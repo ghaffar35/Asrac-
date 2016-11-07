@@ -8,3 +8,17 @@ border: none;
 border-radius: 0;
 font-size: 15px; /*Police du texte*/
 }
+
+
+
+/*----------------------------------------------------------------------------PAGE  ACTUALITES-----------------*/
+.search{
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+.search input{
+  float: left;
+}
+.search .checkbox{
+  float: right;
+}
