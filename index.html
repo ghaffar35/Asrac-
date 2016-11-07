@@ -159,67 +159,114 @@
     <!--Evenement-->
     <section class="événements">
         <div id="tour" class="bg-1">
-  <div class="container">
-    <h3 class="text-center">Evenements à venir</h3>
-    <p class="text-center">Lorem ipsum we'll play you some music.<br> Remember to book your tickets!</p>
-    <ul class="list-group">
-      <li class="list-group-item">Novembre <span class="badge">3</span></li>
-      <li class="list-group-item">Décembre <span class="badge">3</span></li> 
-      <li class="list-group-item">Janvier <span class="badge" data-toggle="modal" data-target="#myModal">3</span></li> 
-    </ul>
-    
-  </div>
-       
-         <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">×</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Rennes Sud</h4>
+            <div class="container">
+                <h3 class="text-center">Evenements à venir</h3>
+                <p class="text-center">Lorem ipsum we'll play you some music.<br> Remember to book your tickets!</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Novembre <span class="badge">3</span></li>
+                    <li class="list-group-item">Décembre <span class="badge">3</span></li>
+                    <li class="list-group-item">Janvier <span class="badge" data-toggle="modal" data-target="#myModal">3</span></li>
+                </ul>
+
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <h4><span class="glyphicon glyphicon-lock"></span> Rennes Sud</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row text-center">
+                                <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <img src="paris.jpg" alt="Rennes Sud" width="400" height="300">
+                                        <p><strong>Rennes Sud</strong></p>
+                                        <p>Vendredi 27 Novembre 2016</p>
+                                        <button class="btn" data-toggle="modal" data-target="#myModal">+ de détails</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <img src="newyork.jpg" alt="Rennes Nord" width="400" height="300">
+                                        <p><strong>Rennes Nord</strong></p>
+                                        <p>Samedi 28 Novembre 2016</p>
+                                        <button class="btn" data-toggle="modal" data-target="#myModal">+ de détails</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <img src="sanfran.jpg" alt="Rennes Est" width="400" height="300">
+                                        <p><strong>Rennes Est</strong></p>
+                                        <p>Dimanche 29 Novembre 2016</p>
+                                        <button class="btn" data-toggle="modal" data-target="#myModal">+ de détails</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-   <div class="row text-center">
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <img src="paris.jpg" alt="Rennes Sud" width="400" height="300">
-          <p><strong>Rennes Sud</strong></p>
-          <p>Vendredi 27 Novembre 2016</p>
-          <button class="btn" data-toggle="modal" data-target="#myModal">+ de détails</button>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <img src="newyork.jpg" alt="Rennes Nord" width="400" height="300">
-          <p><strong>Rennes Nord</strong></p>
-          <p>Samedi 28 Novembre 2016</p>
-          <button class="btn" data-toggle="modal" data-target="#myModal">+ de détails</button>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <img src="sanfran.jpg" alt="Rennes Est" width="400" height="300">
-          <p><strong>Rennes Est</strong></p>
-          <p>Dimanche 29 Novembre 2016</p>
-          <button class="btn" data-toggle="modal" data-target="#myModal">+ de détails</button>
-        </div>
-      </div>
-    </div>
-        </div>
-      </div>
-    </div>
-  </div>
-        </div>
-        
+
     </section>
     <!--Charte de l'association-->
     <section class="charte"></section>
     <!--Formulaire de contact-->
-    <section class="contact"></section>
+    <section class="contact">
+        <h1>Contactez-nous !</h1>
+
+        <form class="renseignements" action="index.html" method="post">
+            <!--Masculin / Féminim-->
+            <div class=" text-center">
+                <label><input type="checkbox"> Masculin</label>
+                <label><input type="checkbox"> Féminim</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <!--Nom-->
+                    <label for="nom">Nom:</label>
+                    <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                </div>
+                <div class="form-group">
+                    <!--Prénom-->
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Votre prénom">
+                </div>
+                <div class="form-group">
+                    <!--E-mail-->
+                    <label for="email">E-mail:</label>
+                    <input type="text" class="form-control" id="email" placeholder="Votre email">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <!--Adresse-->
+                    <label for="adresse">Adresse :</label>
+                    <input type="text" class="form-control" id="adresse" placeholder="Votre adresse">
+                </div>
+                <div class="form-group">
+                    <!--Code Postale-->
+                    <label for="Postal">Code Postal :</label>
+                    <input type="text" class="form-control" id="Postal" placeholder="Votre code postal">
+                </div>
+                <div class="form-group">
+                    <!--Ville--->
+                    <label for="ville">Ville:</label>
+                    <input type="text" class="form-control" id="ville" placeholder="Votre ville">
+                </div>
+            </div>
+        </form>
+    </section>
     <!--Footer-->
-    <footer></footer>
+    <footer>
+
+    </footer>
 
 
 
