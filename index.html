@@ -43,7 +43,7 @@
        <span class="icon-bar"></span>
      </button>
                     <!--Nom de l'association-->
-                    <a class="navbar-brand" href="#">ASRAC</a>
+                    <a class="navbar-brand" href="index.html">ASRAC</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <!--<ul class="nav navbar-nav">
@@ -52,7 +52,7 @@
        <li><a href="#">Contact</a></li>
      </ul>-->
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Actualités</a></li>
+                        <li><a href="pages/actualite.html">Actualités</a></li>
                         <li><a href="#">Evènements</a></li>
                         <li><a href="#">Contact</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -240,50 +240,57 @@
     <!--Charte de l'association-->
     <section class="charte"></section>
     <!--Formulaire de contact-->
-    <section class="contact">
-        <h1>Contactez-nous !</h1>
+    <section class="container contact">
+        <h1 class="text-center">Contactez-nous !</h1>
 
         <form class="renseignements" action="index.html" method="post">
             <!--Masculin / Féminim-->
-            <div class=" text-center">
+            <div class="text-center">
                 <label><input type="checkbox"> Masculin</label>
                 <label><input type="checkbox"> Féminim</label>
             </div>
-            <div class="col-md-6">
+            <div class="col-xs-6">
                 <div class="form-group">
-                    <!--Nom-->
-                    <label for="nom">Nom:</label>
-                    <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                    <!--Nom / Prénom-->
+                    <label for="nom">Nom / Prénom :</label>
+                    <input type="text" class="form-control" id="nom" placeholder="Votre nom et Prénom" required>
                 </div>
                 <div class="form-group">
-                    <!--Prénom-->
-                    <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" placeholder="Votre prénom">
+                  <!--E-mail-->
+                  <label for="email">E-mail:</label>
+                  <input type="text" class="form-control" id="email" placeholder="Votre email" required>
                 </div>
                 <div class="form-group">
-                    <!--E-mail-->
-                    <label for="email">E-mail:</label>
-                    <input type="text" class="form-control" id="email" placeholder="Votre email">
+                    <!--Téléphone-->
+                    <label for="email">Téléphone:</label>
+                    <input type="text" class="form-control" id="téléphone" placeholder="Votre n° de téléphone" required>
                 </div>
 
             </div>
-            <div class="col-md-6">
+            <div class="col-xs-6">
                 <div class="form-group">
                     <!--Adresse-->
                     <label for="adresse">Adresse :</label>
-                    <input type="text" class="form-control" id="adresse" placeholder="Votre adresse">
+                    <input type="text" class="form-control" id="adresse" placeholder="Votre adresse" required>
                 </div>
                 <div class="form-group">
                     <!--Code Postale-->
                     <label for="Postal">Code Postal :</label>
-                    <input type="text" class="form-control" id="Postal" placeholder="Votre code postal">
+                    <input type="text" class="form-control" id="Postal" placeholder="Votre code postal" required>
                 </div>
                 <div class="form-group">
                     <!--Ville--->
                     <label for="ville">Ville:</label>
-                    <input type="text" class="form-control" id="ville" placeholder="Votre ville">
+                    <input type="text" class="form-control" id="ville" placeholder="Votre ville" required>
                 </div>
             </div>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="comment">Votre message:</label>
+                    <textarea class="form-control" rows="5" id="comment" placeholder="Votre message" spellcheck="true" maxlength="400" required></textarea>
+                </div>
+            </div>
+                        <input type="submit" class="btn btn-info text-center" value="Submit Button">
         </form>
     </section>
     <!--Footer-->
@@ -301,5 +308,4 @@
 
 
 </body>
-
 </html>
