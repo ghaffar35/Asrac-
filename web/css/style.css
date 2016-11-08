@@ -1,3 +1,7 @@
+/*Couleurs
+Barre de navigation (Couleur Primaire) :#FF9800;
+Navbar - Text :#2F3440;
+ */
 body{
     font-family: 'Lora', serif;
 }
@@ -16,8 +20,8 @@ header{
 
 }
 .navbar-inverse{
-background-color: #F8CA4D;
-border-color:#F8CA4D;
+background-color: #FF9800;
+border-color:#FF9800;
 border-radius: 0;
 font-size: 15px; /*Police du texte*/
 }
@@ -29,18 +33,23 @@ font-size: 15px; /*Police du texte*/
 .navbar-inverse .navbar-brand{
     color:#2F3440;
 }
-/*---Formulaire de contact--*/
-.validation{
-  margin-top: 20px;
-}
 /*Accueil*/
 .accueil{
   margin: 25px auto;
   padding-top: 20px;
   text-align: center;
 }
-.accueil h1, h2{
+.accueil h1,.accueil h2{
   color:white;
+}
+/*-----Actualités------*/
+.actualite h2{
+  margin-bottom: 20px;
+  color: #2F3440;
+}
+/*---Formulaire de contact--*/
+.validation{
+  margin-top: 20px;
 }
 
 /*-------------------------------------------------------------------PAGE ARTICLES-----------------*/
@@ -89,11 +98,11 @@ bg-1 {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
   }
- .thumbnail {
+ /*.thumbnail {
       padding: 0 0 15px 0;
       border: none;
       border-radius: 0;
-  }
+  }*/
   .thumbnail p {
       margin-top: 15px;
       color: #555;
