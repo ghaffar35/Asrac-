@@ -20,10 +20,6 @@ Leur besoin est donc :
 
 L'association ne dispose pas de charte graphique et vous laisse libre concernant le design.
 
-## La technologie
-
-Le client n'a pas émis de souhait particulier concernant la technologie à utiliser. Néanmoins au vu de la dimension du projet, il semble important de pouvoir utiliser un framework PHP tel que Symfony.
-
 ## Rendu attendu
 
 D'ici Jeudi, il est attendu à ce que vous réalisiez :
@@ -32,5 +28,3 @@ D'ici Jeudi, il est attendu à ce que vous réalisiez :
  * Les scénarios (BPML?)
 
 L'application sera par la suite implémentée par les apprenants de la formation de la code académie tachez donc de réaliser une documentation claire sur les spécifications techniques de l'application.
-
-

@@ -28,6 +28,10 @@ class FormExtensionDivLayoutTest extends AbstractDivLayoutTest
      */
     protected $extension;
 
+    protected $testableFeatures = array(
+        'choice_attr',
+    );
+
     protected function setUp()
     {
         parent::setUp();
@@ -65,7 +69,7 @@ class FormExtensionDivLayoutTest extends AbstractDivLayoutTest
     public function testThemeBlockInheritanceUsingUse()
     {
         $view = $this->factory
-            ->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\EmailType')
+            ->createNamed('name', 'email')
             ->createView()
         ;
 
@@ -80,7 +84,7 @@ class FormExtensionDivLayoutTest extends AbstractDivLayoutTest
     public function testThemeBlockInheritanceUsingExtend()
     {
         $view = $this->factory
-            ->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\EmailType')
+            ->createNamed('name', 'email')
             ->createView()
         ;
 
@@ -95,7 +99,7 @@ class FormExtensionDivLayoutTest extends AbstractDivLayoutTest
     public function testThemeBlockInheritanceUsingDynamicExtend()
     {
         $view = $this->factory
-            ->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\EmailType')
+            ->createNamed('name', 'email')
             ->createView()
         ;
 
@@ -106,10 +110,17 @@ class FormExtensionDivLayoutTest extends AbstractDivLayoutTest
 
     public function isSelectedChoiceProvider()
     {
+        // The commented cases should not be necessary anymore, because the
+        // choice lists should assure that both values passed here are always
+        // strings
         return array(
+//             array(true, 0, 0),
             array(true, '0', '0'),
             array(true, '1', '1'),
+//             array(true, false, 0),
+//             array(true, true, 1),
             array(true, '', ''),
+//             array(true, null, ''),
             array(true, '1.23', '1.23'),
             array(true, 'foo', 'foo'),
             array(true, 'foo10', 'foo10'),
@@ -130,33 +141,14 @@ class FormExtensionDivLayoutTest extends AbstractDivLayoutTest
         $this->assertSame($expected, $this->extension->isSelectedChoice($choice, $value));
     }
 
-    public function testStartTagHasNoActionAttributeWhenActionIsEmpty()
-    {
-        $form = $this->factory->create('Symfony\Component\Form\Extension\Core\Type\FormType', null, array(
-            'method' => 'get',
-            'action' => '',
-        ));
-
-        $html = $this->renderStart($form->createView());
-
-        $this->assertSame('<form name="form" method="get">', $html);
-    }
-
-    public function testStartTagHasActionAttributeWhenActionIsZero()
-    {
-        $form = $this->factory->create('Symfony\Component\Form\Extension\Core\Type\FormType', null, array(
-            'method' => 'get',
-            'action' => '0',
-        ));
-
-        $html = $this->renderStart($form->createView());
-
-        $this->assertSame('<form name="form" method="get" action="0">', $html);
-    }
-
     protected function renderForm(FormView $view, array $vars = array())
     {
         return (string) $this->extension->renderer->renderBlock($view, 'form', $vars);
+    }
+
+    protected function renderEnctype(FormView $view)
+    {
+        return (string) $this->extension->renderer->searchAndRenderBlock($view, 'enctype');
     }
 
     protected function renderLabel(FormView $view, $label = null, array $vars = array())
@@ -215,5 +207,15 @@ class FormExtensionDivLayoutTest extends AbstractDivLayoutTest
         return array(
             array(array('parent_label.html.twig'), array('child_label.html.twig')),
         );
+    }
+
+    public function testRange()
+    {
+        // No-op for forward compatibility with AbstractLayoutTest 2.8
+    }
+
+    public function testRangeWithMinMaxValues()
+    {
+        // No-op for forward compatibility with AbstractLayoutTest 2.8
     }
 }
