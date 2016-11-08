@@ -13,17 +13,17 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
 
     <!--BOOTSTRAP-->
-    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css" media="screen">
+    <link rel="stylesheet" href="../web/lib/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="../web/lib/bootstrap-theme.min.css" media="screen">
     <!--CSS-->
-    <link rel="stylesheet" href="css/style.css" media="screen">
+    <link rel="stylesheet" href="../web/css/style.css" media="screen">
     <!--FONT AWESOME-->
-    <link rel="stylesheet" href="css/font-awesome.min.css" media="screen">
+    <link rel="stylesheet" href="../lib/font-awesome.min.css" media="screen">
 
     <!--JAVASCRIPT-->
-    <script src="js/script.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../web/lib/script.js"></script>
+    <script src="../web/lib/jquery.js"></script>
+    <script src="../web/lib/bootstrap.min.js"></script>
 
 
 
@@ -46,11 +46,6 @@
                     <a class="navbar-brand" href="index.html">ASRAC</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
-                    <!--<ul class="nav navbar-nav">
-       <li><a href="#">Actualités</a></li>
-       <li><a href="#">Evènements</a></li>
-       <li><a href="#">Contact</a></li>
-     </ul>-->
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="pages/actualite.html">Actualités</a></li>
                         <li><a href="#">Evènements</a></li>
@@ -62,7 +57,7 @@
             </div>
         </nav>
 
-        <!--Actualité-->
+        <!--Actualités-->
         <section class=" container actualité text-center">
             <div class="row">
                 <!--Article numéro 1-->
@@ -105,7 +100,7 @@
                     </div>
                 </div>
                 <!--Plus d'articles-->
-                <a href="pages/actualite.html" class="btn btn-primary" role="button"><i class="fa fa-plus" aria-hidden="true"></i> ARTICLES</a>
+                <a href="actualite.html" class="btn btn-primary" role="button"><i class="fa fa-plus" aria-hidden="true"></i> ARTICLES</a>
             </div>
             <!--Fin row-->
         </section>
@@ -274,14 +269,34 @@
               <div class="form-group">
                   <label for="comment">Votre message:</label>
                   <textarea class="form-control" rows="5" id="comment" placeholder="Votre message" spellcheck="true" maxlength="400" required></textarea>
-                                          <input type="submit" class="btn btn-info validation text-center" value="Submit Button">
+                  <input type="submit" class="btn btn-info validation text-center" value="Submit Button">
               </div>
             </div>
         </form>
     </section>
     <!--Footer-->
     <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 ">
+        <p>ASRAC Rennes
+           19 Rue de Guyennne - 35 000 Rennes
+        </p>
+          </div>
+          <div class="col-md-4">
+              <i class="fa fa-copyright" aria-hidden="true"></i>Site réalisé par la Code Académie
+          </div>
+          <div class="col-md-4">
+          <p>
+            Suivez-nous
+          </p>
+      <i class="fa fa-facebook-square" aria-hidden="true"></i>
+      <i class="fa fa-twitter-square" aria-hidden="true"></i>
+      <i class="fa fa-envelope" aria-hidden="true"></i>
 
+          </div>
+        </div>
+      </div>
     </footer>
 
 
