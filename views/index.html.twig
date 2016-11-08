@@ -1,0 +1,13 @@
+
+{% for article in articles %}
+<article class="col-lg-offset-0 col-lg-9 col-lg-offset-3">
+    <center>
+		<h2>
+			<a class="articleTitle" href="{{ path('article', { 'id': article.id }) }}">{{ article.title }}</a>
+		</h2>
+		<p class="date">{{ article.dateArt|date('d-m-Y') }}</p>
+	</center>
+    <img src="{{ app.request.basepath }}/images/Articles/{{ article.image }}" class="col-lg-offset-1 col-lg-10  img-responsive imgIndex" alt="{{ article.image }}"/>
+
+</article>
+{% endfor %}

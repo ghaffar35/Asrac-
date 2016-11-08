@@ -11,7 +11,13 @@ ExceptionHandler::register();
 
 // Register service providers
 $app->register(new Silex\Provider\DoctrineServiceProvider());
-
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__.'/../views',
+));
+$app['twig'] = $app->share($app->extend('twig', function(Twig_Environment $twig, $app) {
+    $twig->addExtension(new Twig_Extensions_Extension_Text());
+    return $twig;
+}));
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\SessionServiceProvider());
