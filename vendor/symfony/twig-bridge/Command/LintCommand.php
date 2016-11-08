@@ -16,7 +16,6 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Finder\Finder;
 
 /**
@@ -58,6 +57,7 @@ class LintCommand extends Command
     protected function configure()
     {
         $this
+            ->setAliases(array('twig:lint'))
             ->setDescription('Lints a template and outputs encountered errors')
             ->addOption('format', null, InputOption::VALUE_REQUIRED, 'The output format', 'txt')
             ->addArgument('filename', InputArgument::IS_ARRAY)
@@ -65,19 +65,18 @@ class LintCommand extends Command
 The <info>%command.name%</info> command lints a template and outputs to STDOUT
 the first encountered syntax error.
 
-You can validate the syntax of contents passed from STDIN:
+You can validate the syntax of a file:
 
-  <info>cat filename | php %command.full_name%</info>
-
-Or the syntax of a file:
-
-  <info>php %command.full_name% filename</info>
+<info>php %command.full_name% filename</info>
 
 Or of a whole directory:
 
-  <info>php %command.full_name% dirname</info>
-  <info>php %command.full_name% dirname --format=json</info>
+<info>php %command.full_name% dirname</info>
+<info>php %command.full_name% dirname --format=json</info>
 
+You can also pass the template contents from STDIN:
+
+<info>cat filename | php %command.full_name%</info>
 EOF
             )
         ;
@@ -85,10 +84,14 @@ EOF
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $io = new SymfonyStyle($input, $output);
+        if (false !== strpos($input->getFirstArgument(), ':l')) {
+            $output->writeln('<comment>The use of "twig:lint" command is deprecated since version 2.7 and will be removed in 3.0. Use the "lint:twig" instead.</comment>');
+        }
 
-        if (null === $twig = $this->getTwigEnvironment()) {
-            $io->error('The Twig environment needs to be set.');
+        $twig = $this->getTwigEnvironment();
+
+        if (null === $twig) {
+            $output->writeln('<error>The Twig environment needs to be set.</error>');
 
             return 1;
         }
@@ -105,12 +108,12 @@ EOF
                 $template .= fread(STDIN, 1024);
             }
 
-            return $this->display($input, $output, $io, array($this->validate($twig, $template, uniqid('sf_'))));
+            return $this->display($input, $output, array($this->validate($twig, $template, uniqid('sf_'))));
         }
 
         $filesInfo = $this->getFilesInfo($twig, $filenames);
 
-        return $this->display($input, $output, $io, $filesInfo);
+        return $this->display($input, $output, $filesInfo);
     }
 
     private function getFilesInfo(\Twig_Environment $twig, array $filenames)
@@ -154,11 +157,11 @@ EOF
         return array('template' => $template, 'file' => $file, 'valid' => true);
     }
 
-    private function display(InputInterface $input, OutputInterface $output, SymfonyStyle $io, $files)
+    private function display(InputInterface $input, OutputInterface $output, $files)
     {
         switch ($input->getOption('format')) {
             case 'txt':
-                return $this->displayTxt($output, $io, $files);
+                return $this->displayTxt($output, $files);
             case 'json':
                 return $this->displayJson($output, $files);
             default:
@@ -166,24 +169,20 @@ EOF
         }
     }
 
-    private function displayTxt(OutputInterface $output, SymfonyStyle $io, $filesInfo)
+    private function displayTxt(OutputInterface $output, $filesInfo)
     {
         $errors = 0;
 
         foreach ($filesInfo as $info) {
             if ($info['valid'] && $output->isVerbose()) {
-                $io->comment('<info>OK</info>'.($info['file'] ? sprintf(' in %s', $info['file']) : ''));
+                $output->writeln('<info>OK</info>'.($info['file'] ? sprintf(' in %s', $info['file']) : ''));
             } elseif (!$info['valid']) {
                 ++$errors;
-                $this->renderException($io, $info['template'], $info['exception'], $info['file']);
+                $this->renderException($output, $info['template'], $info['exception'], $info['file']);
             }
         }
 
-        if ($errors === 0) {
-            $io->success(sprintf('All %d Twig files contain valid syntax.', count($filesInfo)));
-        } else {
-            $io->warning(sprintf('%d Twig files have valid syntax and %d contain errors.', count($filesInfo) - $errors, $errors));
-        }
+        $output->writeln(sprintf('<comment>%d/%d valid files</comment>', count($filesInfo) - $errors, count($filesInfo)));
 
         return min($errors, 1);
     }
@@ -202,7 +201,7 @@ EOF
             }
         });
 
-        $output->writeln(json_encode($filesInfo, JSON_PRETTY_PRINT));
+        $output->writeln(json_encode($filesInfo, defined('JSON_PRETTY_PRINT') ? JSON_PRETTY_PRINT : 0));
 
         return min($errors, 1);
     }
@@ -212,20 +211,20 @@ EOF
         $line = $exception->getTemplateLine();
 
         if ($file) {
-            $output->text(sprintf('<error> ERROR </error> in %s (line %s)', $file, $line));
+            $output->writeln(sprintf('<error>KO</error> in %s (line %s)', $file, $line));
         } else {
-            $output->text(sprintf('<error> ERROR </error> (line %s)', $line));
+            $output->writeln(sprintf('<error>KO</error> (line %s)', $line));
         }
 
-        foreach ($this->getContext($template, $line) as $lineNumber => $code) {
-            $output->text(sprintf(
+        foreach ($this->getContext($template, $line) as $no => $code) {
+            $output->writeln(sprintf(
                 '%s %-6s %s',
-                $lineNumber === $line ? '<error> >> </error>' : '    ',
-                $lineNumber,
+                $no == $line ? '<error>>></error>' : '  ',
+                $no,
                 $code
             ));
-            if ($lineNumber === $line) {
-                $output->text(sprintf('<error> >> %s</error> ', $exception->getRawMessage()));
+            if ($no == $line) {
+                $output->writeln(sprintf('<error>>> %s</error> ', $exception->getRawMessage()));
             }
         }
     }
