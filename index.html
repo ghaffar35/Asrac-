@@ -246,8 +246,11 @@
         <form class="renseignements" action="index.html" method="post">
             <!--Masculin / Féminim-->
             <div class="text-center">
-                <label><input type="checkbox"> Masculin</label>
-                <label><input type="checkbox"> Féminim</label>
+              <select class="choice">
+                <option value="option">Féminim</option>
+                <option value="option">Masculin</option>
+              </select>
+
             </div>
             <div class="col-xs-6">
                 <div class="form-group">
@@ -268,29 +271,12 @@
 
             </div>
             <div class="col-xs-6">
-                <div class="form-group">
-                    <!--Adresse-->
-                    <label for="adresse">Adresse :</label>
-                    <input type="text" class="form-control" id="adresse" placeholder="Votre adresse" required>
-                </div>
-                <div class="form-group">
-                    <!--Code Postale-->
-                    <label for="Postal">Code Postal :</label>
-                    <input type="text" class="form-control" id="Postal" placeholder="Votre code postal" required>
-                </div>
-                <div class="form-group">
-                    <!--Ville--->
-                    <label for="ville">Ville:</label>
-                    <input type="text" class="form-control" id="ville" placeholder="Votre ville" required>
-                </div>
+              <div class="form-group">
+                  <label for="comment">Votre message:</label>
+                  <textarea class="form-control" rows="5" id="comment" placeholder="Votre message" spellcheck="true" maxlength="400" required></textarea>
+                                          <input type="submit" class="btn btn-info validation text-center" value="Submit Button">
+              </div>
             </div>
-            <div class="col-xs-12">
-                <div class="form-group">
-                    <label for="comment">Votre message:</label>
-                    <textarea class="form-control" rows="5" id="comment" placeholder="Votre message" spellcheck="true" maxlength="400" required></textarea>
-                </div>
-            </div>
-                        <input type="submit" class="btn btn-info text-center" value="Submit Button">
         </form>
     </section>
     <!--Footer-->

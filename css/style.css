@@ -9,9 +9,12 @@ border-radius: 0;
 font-size: 15px; /*Police du texte*/
 }
 
+/**---Formulaire de contact*/
+.validation{
+  margin-top: 20px;
+}
 
-
-/*----------------------------------------------------------------------------PAGE  ACTUALITES-----------------*/
+/*-----------------------------------------------------------------------PAGE  ACTUALITES-----------------*/
 .search{
   margin-top: 25px;
   margin-bottom: 30px;
