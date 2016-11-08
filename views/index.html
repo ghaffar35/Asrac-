@@ -171,7 +171,7 @@
                         <div class="modal-body">
                             <div class="row text-center">
                                 <div class="col-sm-4">
-                                    <div class="thumbnail">
+                                    <div class="thumbnail thumbmodal">
                                         <img src="../web/images/agenda1.jpg" alt="Rennes Sud" width="700" height="500">
                                         <p><strong>Evénement x</strong></p>
                                         <p><strong>Rennes Sud</strong></p>
@@ -180,7 +180,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
-                                    <div class="thumbnail">
+                                    <div class="thumbnail thumbmodal">
                                         <img src="../web/images/agenda1.jpg" alt="Rennes Nord" width="700" height="500">
                                         <p><strong>Evénement y</strong></p>
                                         <p><strong>Rennes Nord</strong></p>
@@ -189,7 +189,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
-                                    <div class="thumbnail">
+                                    <div class="thumbnail thumbmodal">
                                         <img src="../web/images/agenda1.jpg" alt="Rennes Est" width="700" height="500">
                                         <p><strong>Evénement z</strong></p>
                                         <p><strong>Rennes Est</strong></p>
@@ -230,44 +230,34 @@
     <!--Charte de l'association-->
     <section class="charte"></section>
     <!--Formulaire de contact-->
-    <section class="container contact">
-        <h1 class="text-center">Contactez-nous !</h1>
-
-        <form class="renseignements" action="index.html" method="post">
-            <!--Masculin / Féminim-->
-            <div class="text-center">
-              <select class="choice">
-                <option value="option">Féminim</option>
-                <option value="option">Masculin</option>
-              </select>
-
-            </div>
-            <div class="col-xs-6">
-                <div class="form-group">
-                    <!--Nom / Prénom-->
-                    <label for="nom">Nom / Prénom :</label>
-                    <input type="text" class="form-control" id="nom" placeholder="Votre nom et Prénom" required>
-                </div>
-                <div class="form-group">
-                  <!--E-mail-->
-                  <label for="email">E-mail:</label>
-                  <input type="text" class="form-control" id="email" placeholder="Votre email" required>
-                </div>
-                <div class="form-group">
-                    <!--Téléphone-->
-                    <label for="email">Téléphone:</label>
-                    <input type="text" class="form-control" id="téléphone" placeholder="Votre n° de téléphone" required>
-                </div>
-
-            </div>
-            <div class="col-xs-6">
-              <div class="form-group">
-                  <label for="comment">Votre message:</label>
-                  <textarea class="form-control" rows="5" id="comment" placeholder="Votre message" spellcheck="true" maxlength="400" required></textarea>
-                  <input type="submit" class="btn btn-info validation text-center" value="Submit Button">
-              </div>
-            </div>
-        </form>
+    <!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contactez nous.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>Rennes</p>
+      <p><span class="glyphicon glyphicon-phone"></span> 06.22.22.22.22</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> monemail@asrac.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Envoyer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     </section>
     <!--Footer-->
     <footer>
