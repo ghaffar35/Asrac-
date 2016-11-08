@@ -2,7 +2,7 @@ body{
     font-family: 'Lora', serif;
 }
 
-/*----------------Barre de navigation-----------------*/
+/*--------------Barre de navigation-----------------*/
 .navbar-inverse{
 border: none;
 border-radius: 0;
@@ -13,6 +13,8 @@ font-size: 15px; /*Police du texte*/
 .validation{
   margin-top: 20px;
 }
+
+
 
 /*-------------------------------------------------------------------PAGE  ACTUALITES-----------------*/
 .search{
