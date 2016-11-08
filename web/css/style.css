@@ -5,17 +5,10 @@ Navbar - Text :#2F3440;
 body{
     font-family: 'Lora', serif;
 }
-/*----Header---*/
-header{
-  background-image: url(../images/Conseil_Administration.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items:center;
-  min-height: 580px; /*Hauteur min*/
-}
+
 /*-----Barre de navigation---*/
 .navbar{
+  margin-bottom: 0;
   min-height: 60px;
 
 }
@@ -35,7 +28,12 @@ font-size: 15px; /*Police du texte*/
 }
 /*Accueil*/
 .accueil{
-  margin: 25px auto;
+  background-image: url(../images/Conseil_Administration.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items:center;
+  min-height: 580px; /*Hauteur min*/
+  margin: 0 auto;
   padding-top: 20px;
   text-align: center;
 }
