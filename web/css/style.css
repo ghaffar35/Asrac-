@@ -1,22 +1,49 @@
 body{
     font-family: 'Lora', serif;
 }
+/*----Header---*/
+header{
+  background-image: url(../images/Conseil_Administration.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items:center;
+  min-height: 580px; /*Hauteur min*/
+}
+/*-----Barre de navigation---*/
+.navbar{
+  min-height: 60px;
 
-/*--------------Barre de navigation-----------------*/
+}
 .navbar-inverse{
-border: none;
+background-color: #F8CA4D;
+border-color:#F8CA4D;
 border-radius: 0;
 font-size: 15px; /*Police du texte*/
 }
-
-/**---Formulaire de contact*/
+/*Couleur du text*/
+.navbar-inverse .navbar-nav > li > a{
+  color:#2F3440;
+}
+/*Couleur du nom du site*/
+.navbar-inverse .navbar-brand{
+    color:#2F3440;
+}
+/*---Formulaire de contact--*/
 .validation{
   margin-top: 20px;
 }
+/*Accueil*/
+.accueil{
+  margin: 25px auto;
+  padding-top: 20px;
+  text-align: center;
+}
+.accueil h1, h2{
+  color:white;
+}
 
-
-
-/*-------------------------------------------------------------------PAGE  ACTUALITES-----------------*/
+/*-------------------------------------------------------------------PAGE ACTUALITES-----------------*/
 .search{
   margin-top: 25px;
   margin-bottom: 30px;
@@ -43,7 +70,7 @@ font-size: 15px; /*Police du texte*/
 .evenements{
     height: 350px;
   margin-top: 250px;
-margin-bottom: 40px;  
+margin-bottom: 40px;
 }
 
 bg-1 {
