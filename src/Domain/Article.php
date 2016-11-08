@@ -54,7 +54,6 @@ class Article {
 			$dateArt = $dateArt->format('Y-m-d H:i:s');
 		}
         $this->dateArt = $dateArt;
-
     }
 
 	public function getTheme() {
