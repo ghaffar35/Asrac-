@@ -41,15 +41,6 @@ class Article {
     public function setImage($image) {
         $this->image = $image;
     }
-
-	public function getTags() {
-        return $this->tags;
-    }
-
-    public function setTags($tags) {
-        $this->tags = $tags;
-    }
-
 	public function getDateArt() {
 
 		if(is_string($this->dateArt)){
@@ -64,6 +55,14 @@ class Article {
 		}
         $this->dateArt = $dateArt;
 
+    }
+
+	public function getTheme() {
+        return $this->theme;
+    }
+
+    public function setTheme($theme) {
+        $this->theme = $theme;
     }
 
 }
