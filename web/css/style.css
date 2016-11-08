@@ -37,7 +37,6 @@ font-size: 15px; /*Police du texte*/
   padding-top: 20px;
   text-align: center;
 }
-
 .accueil h1,.accueil h2{
   color:white;
 }
@@ -51,7 +50,6 @@ font-size: 15px; /*Police du texte*/
   margin-top: 20px;
 }
 
-
 /*-------------------------------------------------------------------PAGE ARTICLES-----------------*/
 .search{
   margin-top: 25px;
@@ -64,11 +62,13 @@ font-size: 15px; /*Police du texte*/
   float: right;
 }
 
+
 /*------------------------------------Association-----------------------------------------------*/
 
 
 .asso{
     background-color: whitesmoke;
+    width: 100%;
     margin-top: 40px;
     margin-bottom: 40px;
 }
@@ -88,12 +88,7 @@ bg-1 {
   }
   .bg-1 h3 {color: #fff;}
   .bg-1 p {font-style: italic;}
-
-.list-group-item{
-    background-color: whitesmoke;}
-
   .list-group-item:first-child {
-      background-color: whitesmoke;
       border-top-right-radius: 0;
       border-top-left-radius: 0;
   }
@@ -101,7 +96,6 @@ bg-1 {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
   }
-
  /*.thumbnail {
       padding: 0 0 15px 0;
       border: none;
@@ -111,14 +105,14 @@ bg-1 {
       margin-top: 15px;
       color: #555;
   }
-  .thumbmodal button {
+  .thumbnail button {
       padding: 10px 20px;
       background-color: #333;
       color: #f1f1f1;
       border-radius: 0;
       transition: .2s;
   }
-  .thumbmodal button:hover, .thumbmodal button:focus {
+  .thumbnail button:hover, .thumbnail button:focus {
       border: 1px solid #333;
       background-color: #fff;
       color: #000;
@@ -132,8 +126,3 @@ bg-1 {
   .modal-header, .modal-body {
       padding: 30px 40px;
   }
-
-/*-------------------------------------Formulaire------------------------------*/
-.contact{
-    padding: 60px 50px;}
-
