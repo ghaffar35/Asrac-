@@ -31,19 +31,21 @@ font-size: 15px; /*Police du texte*/
 
 /*------------------------------------Association-----------------------------------------------*/
 
-.association{
-    height: 350px;
-    margin-top: 40px;
-    margin-bottom: 60px;
+
+.asso{
     background-color: whitesmoke;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 /*---------------------------------Evenement------------------------------------------------------*/
 
 .evenements{
-    height: 350px;
-  margin-top: 250px;
+height: 350px;
+margin-top: 40px;
 margin-bottom: 40px;  
+background-color: whitesmoke;
 }
 
 bg-1 {
@@ -60,7 +62,7 @@ bg-1 {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
   }
-  .thumbnail {
+ .thumbnail {
       padding: 0 0 15px 0;
       border: none;
       border-radius: 0;
@@ -69,14 +71,14 @@ bg-1 {
       margin-top: 15px;
       color: #555;
   }
-  .btn {
+  .thumbnail button {
       padding: 10px 20px;
       background-color: #333;
       color: #f1f1f1;
       border-radius: 0;
       transition: .2s;
   }
-  .btn:hover, .btn:focus {
+  .thumbnail button:hover, .thumbnail button:focus {
       border: 1px solid #333;
       background-color: #fff;
       color: #000;
