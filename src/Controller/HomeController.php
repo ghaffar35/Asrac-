@@ -19,4 +19,5 @@ class HomeController {
 	public function articleAction($id, Request $request, Application $app) {
         $article = $app['dao.article']->find($id);
 		return $app['twig']->render('article.html.twig', array('article' => $article));
+	}
 }
