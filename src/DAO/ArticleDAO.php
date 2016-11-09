@@ -6,11 +6,7 @@ use Asrac\Domain\Article;
 
 class ArticleDAO extends DAO
 {
-    /**
-     * Return a list of all articles, sorted by date (most recent first).
-     *
-     * @return array A list of all articles.
-     */
+    // Return a list of all articles, sorted by date (most recent first).
     public function findAll() {
         $sql = "select * from Article order by art_id";
         $result = $this->getDb()->fetchAll($sql);
@@ -24,12 +20,18 @@ class ArticleDAO extends DAO
         return $articles;
     }
 
-    /**
-     * Creates an Article object based on a DB row.
-     *
-     * @param array $row The DB row containing Article data.
-     * @return \Asrac\Domain\Article
-     */
+	//Return one article with id
+	public function find($id) {
+        $sql = "select * from Article where art_id=?";
+        $row = $this->getDb()->fetchAssoc($sql, array($id));
+
+        if ($row)
+            return $this->buildDomainObject($row);
+        else
+            throw new \Exception("No article matching id " . $id);
+    }
+
+    // Creates an Article object based on a DB row.
     protected function buildDomainObject($row) {
         $article = new Article();
         $article->setId($row['art_id']);
@@ -41,21 +43,7 @@ class ArticleDAO extends DAO
         return $article;
     }
 
-	public function find($id) {
-        $sql = "select * from t_article where art_id=?";
-        $row = $this->getDb()->fetchAssoc($sql, array($id));
-
-        if ($row)
-            return $this->buildDomainObject($row);
-        else
-            throw new \Exception("No article matching id " . $id);
-    }
-
-	 /**
-     * Saves an article into the database.
-     *
-     * @param \Asrac\Domain\Article $article The article to save
-     */
+    // Saves an article into the database.
     public function save(Article $article) {
 
         $articleData = array(
@@ -78,11 +66,7 @@ class ArticleDAO extends DAO
         }
     }
 
-    /**
-     * Removes an article from the database.
-     *
-     * @param integer $id The article id.
-     */
+    // Removes an article from the database.
     public function delete($id) {
         // Delete the article
         $this->getDb()->delete('Article', array('art_id' => $id));
