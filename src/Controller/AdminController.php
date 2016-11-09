@@ -8,6 +8,13 @@ use cms\Domain\Article;
 use cms\Form\Type\ArticleType;
 
 class AdminController {
+
+	public function indexAction(Application $app) {
+        $articles = $app['dao.article']->findAll();
+        return $app['twig']->render('admin.html.twig', array(
+            'articles' => $articles));
+    }
+
 	public function addArticleAction(Request $request, Application $app) {
 			$article = new Article();
 			$articleForm = $app['form.factory']->create(new ArticleType(), $article);
