@@ -1,6 +1,6 @@
 <?php
 // Home page
-$app->get('/', "Asrac\Controller\HomeController::indexAction")->bind('home');
+$app->get('/', "Asrac\Controller\HomeController::allArticles")->bind('home');
 
 // All article
 //$app->get('/articles', "Asrac\Controller\HomeController::allArticles")->bind('all_articles');

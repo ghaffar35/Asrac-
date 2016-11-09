@@ -6,13 +6,13 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
 class HomeController {
+	//
+//    public function indexAction(Application $app) {
+//        $articles = $app['dao.article']->findAll();
+//        return $app['twig']->render('index.html.twig', array('articles' => $articles));
+//    }
 
-    /**
-     * Home page controller.
-     *
-     * @param Application $app Silex application
-     */
-    public function indexAction(Application $app) {
+	public function allArticles(Application $app) {
         $articles = $app['dao.article']->findAll();
         return $app['twig']->render('index.html.twig', array('articles' => $articles));
     }

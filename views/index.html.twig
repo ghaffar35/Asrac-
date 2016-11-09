@@ -10,12 +10,12 @@
         <h1>L'ASRAC</h1>
         <h2>L'association solidaire action citoyenne</h2>
       </div>
-           
-           {% for article in articles %}
+
             <!--Actualités-->
             <section class=" container actualite text-center">
               <h2>Nos articles</h2>
                 <div class="row">
+					{% for article in articles|slice(0, 1) %}
                     <!--Article numéro 1-->
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail articles">
@@ -29,12 +29,14 @@
                             </div>
                         </div>
                     </div>
+					{% endfor %}
                     <!--Article numéro 2-->
+					{% for article in articles|slice(1, 1) %}
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail articles">
                             <img src="{{ app.request.basepath }}/images/Articles/{{ article.image }}"  alt="{{ article.image }}" />
                             <div class="caption">
-                                <h2>Hello World !</h2>
+                                <h2>{{ article.title }}</h2>
                                 <p>{{ article.dateArt|date('d-m-Y') }}</p>
                                 <p class="text-justify">
                                   {{ article.content }}
@@ -42,12 +44,14 @@
                             </div>
                         </div>
                     </div>
+					{% endfor %}
                     <!--Article numéro 3-->
+					{% for article in articles|slice(2, 1) %}
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail articles">
                             <img src="{{ app.request.basepath }}/images/Articles/{{ article.image }}"  alt="{{ article.image }}" />
                             <div class="caption">
-                                <h2>Hello World !</h2>
+                                <h2>{{ article.title }}</h2>
                                 <p>{{ article.dateArt|date('d-m-Y') }}</p>
                                 <p class="text-justify">
                                      {{ article.content }}
@@ -55,12 +59,13 @@
                             </div>
                         </div>
                     </div>
+					{% endfor %}
                     <!--Plus d'articles-->
                     <a href="actualite.html" class="btn btn-primary more " role="button"><i class="fa fa-plus" aria-hidden="true"></i> ARTICLES</a>
                 </div>
                 <!--Fin row-->
             </section>
-            {% endfor %}
+
     <!--Association-->
     <section class="container text-center asso">
             <h2>ASRAC</h2>
