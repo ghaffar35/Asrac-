@@ -4,8 +4,8 @@ namespace Asrac\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-use cms\Domain\Article;
-use cms\Form\Type\ArticleType;
+use Asrac\Domain\Article;
+use Asrac\Form\Type\ArticleType;
 
 class AdminController {
 
@@ -64,4 +64,12 @@ class AdminController {
             'title' => 'Edit article',
             'articleForm' => $articleForm->createView()));
    }
+
+	public function deleteArticleAction($id, Application $app) {
+        // Delete the article
+        $app['dao.article']->delete($id);
+        $app['session']->getFlashBag()->add('success', 'The article was succesfully removed.');
+        // Redirect to admin home page
+        return $app->redirect($app['url_generator']->generate('admin'));
+    }
 }
