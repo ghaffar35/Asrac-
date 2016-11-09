@@ -16,3 +16,9 @@ $app->get('/admin', "Asrac\Controller\AdminController::indexAction")->bind('admi
 
 // Add a new article
 $app->match('/admin/article/add', "Asrac\Controller\AdminController::addArticleAction")->bind('admin_article_add');
+
+// Edit an existing article
+$app->match('/admin/article/{id}/edit', "Asrac\Controller\AdminController::editArticleAction")->bind('admin_article_edit');
+
+// Remove an article
+$app->get('/admin/article/{id}/delete', "Asrac\Controller\AdminController::deleteArticleAction")->bind('admin_article_delete');
