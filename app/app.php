@@ -21,25 +21,25 @@ $app['twig'] = $app->share($app->extend('twig', function(Twig_Environment $twig,
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\SessionServiceProvider());
-//$app->register(new Silex\Provider\SecurityServiceProvider(), array(
-//    'security.firewalls' => array(
-//        'secured' => array(
-//            'pattern' => '^/',
-//            'anonymous' => true,
-//            'logout' => true,
-//            'form' => array('login_path' => '/login', 'check_path' => '/login_check'),
-//            'users' => $app->share(function () use ($app) {
-//                return new Asrac\DAO\UserDAO($app['db']);
-//            }),
-//        ),
-//    ),
-//	'security.role_hierarchy' => array(
-//    	'ROLE_ADMIN' => array('ROLE_USER'),
-//    ),
-//    'security.access_rules' => array(
-//        array('^/admin', 'ROLE_ADMIN'),
-//    ),
-//));
+$app->register(new Silex\Provider\SecurityServiceProvider(), array(
+    'security.firewalls' => array(
+        'secured' => array(
+            'pattern' => '^/',
+            'anonymous' => true,
+            'logout' => true,
+            'form' => array('login_path' => '/login', 'check_path' => '/login_check'),
+            'users' => $app->share(function () use ($app) {
+                return new Asrac\DAO\UserDAO($app['db']);
+            }),
+        ),
+    ),
+	'security.role_hierarchy' => array(
+    	'ROLE_ADMIN' => array('ROLE_USER'),
+    ),
+    'security.access_rules' => array(
+        array('^/admin', 'ROLE_ADMIN'),
+    ),
+));
 
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
     'monolog.logfile' => __DIR__.'/../var/logs/Asrac.log',
@@ -79,10 +79,3 @@ $app['dao.article'] = $app->share(function ($app) {
 //    return $app['twig']->render('error.html.twig', array('message' => $message));
 //});
 
-// Register JSON data decoder for JSON requests
-//$app->before(function (Request $request) {
-//    if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
-//        $data = json_decode($request->getContent(), true);
-//        $request->request->replace(is_array($data) ? $data : array());
-//    }
-//});
