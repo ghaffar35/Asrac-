@@ -30,9 +30,7 @@ font-size: 15px; /*Police du texte*/
 /*       Fade Bs-carousel       */
 /********************************/
 
-
 .fade-carousel {
-    background-attachment: fixed;
     position: relative;
     height: 100vh;
 }
@@ -164,10 +162,6 @@ font-size: 15px; /*Police du texte*/
   margin-bottom: 20px;
   color: #2F3440;
 }
-/*---Formulaire de contact--*/
-.validation{
-  margin-top: 20px;
-}
 
 /*-------------------------------------------------------------------PAGE ARTICLES-----------------*/
 .search{
@@ -186,7 +180,7 @@ font-size: 15px; /*Police du texte*/
 
 
 .asso{
-    background-color: whitesmoke;
+    background-color:#1ABC9C ;
     width: 100%;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -199,11 +193,10 @@ font-size: 15px; /*Police du texte*/
 height: 350px;
 margin-top: 40px;
 margin-bottom: 40px;
-background-color: whitesmoke;
 }
 
 bg-1 {
-      background: #2d2d30;
+      background: #1ABC9C;
       color: #bdbdbd;
   }
   .bg-1 h3 {color: #fff;}
@@ -227,7 +220,7 @@ bg-1 {
   }
   .thumbnail button {
       padding: 10px 20px;
-      background-color: #333;
+      background-color:#1ABC9C;
       color: #f1f1f1;
       border-radius: 0;
       transition: .2s;
@@ -249,4 +242,21 @@ bg-1 {
 
 .btn{
   background-color: #1ABC9C;
+}
+/*--------charte------------*/
+.jumbotron{
+height: 430px;
+   background-color:  #1ABC9C;
+}
+
+.telechargementcharte{
+    margin-top: 60px;
+}
+
+
+/*---Formulaire de contact--*/
+#contact{
+    height: 430px;
+    width: 100%;
+    padding-top: 90px;
 }
