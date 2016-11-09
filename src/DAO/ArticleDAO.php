@@ -8,7 +8,7 @@ class ArticleDAO extends DAO
 {
     // Return a list of all articles, sorted by date (most recent first).
     public function findAll() {
-        $sql = "select * from Article order by art_id";
+        $sql = "select * from Article order by art_id desc";
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
