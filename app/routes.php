@@ -7,3 +7,9 @@ $app->get('/actualite', "Asrac\Controller\HomeController::allArticles")->bind('a
 
 // Detailed info about an article
 $app->match('/article/{id}', "Asrac\Controller\HomeController::articleAction")->bind('article');
+
+// Login form
+$app->get('/login', "cms\Controller\HomeController::loginAction")->bind('login');
+
+// Add a new article
+$app->match('/admin/article/add', "cms\Controller\AdminController::addArticleAction")->bind('admin_article_add');
