@@ -13,7 +13,7 @@ class HomeController {
 
 	public function allArticles(Application $app) {
         $articles = $app['dao.article']->findAll();
-        return $app['twig']->render('articles.html.twig', array('articles' => $articles));
+        return $app['twig']->render('actualite.html.twig', array('articles' => $articles));
     }
 
 	public function articleAction($id, Request $request, Application $app) {
