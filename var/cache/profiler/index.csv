@@ -362,3 +362,12 @@ fb8744,127.0.0.1,GET,http://asrac/images/Articles/test2.jpg,1478692236,,404
 972e3c,127.0.0.1,GET,http://asrac/web/images/avatar2.jpg,1478692236,,404
 ed63df,127.0.0.1,GET,http://asrac/web/images/agenda1.jpg,1478692236,,404
 1c36c7,127.0.0.1,GET,http://asrac/paris.jpg,1478692236,,404
+4060d9,127.0.0.1,GET,http://localhost/Asrac-/web/,1478696630,,500
+633fa9,127.0.0.1,GET,http://localhost/Asrac-/web/,1478696790,,200
+a24cf6,127.0.0.1,GET,http://localhost/Asrac-/web/lib/script.js,1478696790,,404
+f5fb08,127.0.0.1,GET,http://localhost/Asrac-/web/paris.jpg,1478696790,,404
+060680,127.0.0.1,GET,http://localhost/Asrac-/web/paris.jpg,1478696791,,404
+26708e,127.0.0.1,GET,http://localhost/Asrac-/web/actualite.html,1478696815,,404
+9dea3f,127.0.0.1,GET,http://localhost/Asrac-/web/paris.jpg,1478696821,,404
+190772,127.0.0.1,GET,http://localhost/Asrac-/web/pages/actualite.html,1478697230,,404
+8e117e,127.0.0.1,GET,http://localhost/Asrac-/web/paris.jpg,1478697234,,404
