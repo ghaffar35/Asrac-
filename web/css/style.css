@@ -163,6 +163,9 @@ font-size: 15px; /*Police du texte*/
   color: #2F3440;
 }
 
+.actualite{
+    background-color: whitesmoke;
+}
 /*-------------------------------------------------------------------PAGE ARTICLES-----------------*/
 .search{
   margin-top: 25px;
@@ -406,6 +409,9 @@ height: 430px;
 	margin-top: 100px;
 }
 
+.contentAdmin{
+    margin-top: 100px;
+}
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {
@@ -428,3 +434,4 @@ height: 430px;
 	}
 
 }
+ 
