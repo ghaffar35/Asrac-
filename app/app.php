@@ -60,9 +60,6 @@ $app->register(new Silex\Provider\TranslationServiceProvider());
 $app['dao.article'] = $app->share(function ($app) {
     return new Asrac\DAO\ArticleDAO($app['db']);
 });
-//$app['dao.user'] = $app->share(function ($app) {
-//    return new Asrac\DAO\UserDAO($app['db']);
-//});
 
 // Register error handler
 $app->error(function (\Exception $e, $code) use ($app) {
