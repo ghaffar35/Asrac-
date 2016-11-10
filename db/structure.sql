@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 08 Novembre 2016 à 10:44
+-- Généré le :  Jeu 10 Novembre 2016 à 10:30
 -- Version du serveur :  5.7.16-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.8-0ubuntu0.16.04.3
 
@@ -28,12 +28,13 @@ USE `Asrac`;
 -- Structure de la table `Article`
 --
 
+DROP TABLE IF EXISTS `Article`;
 CREATE TABLE `Article` (
   `art_id` int(11) NOT NULL,
   `art_title` text CHARACTER SET utf8mb4 NOT NULL,
   `art_content` text CHARACTER SET utf8mb4 NOT NULL,
-  `art_image` text CHARACTER SET utf8mb4 NOT NULL,
-  `art_date` datetime NOT NULL,
+  `art_image` text CHARACTER SET utf8mb4,
+  `art_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `art_theme` varchar(200) CHARACTER SET utf8mb4 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -43,6 +44,7 @@ CREATE TABLE `Article` (
 -- Structure de la table `event`
 --
 
+DROP TABLE IF EXISTS `event`;
 CREATE TABLE `event` (
   `ev_id` int(11) NOT NULL,
   `ev_title` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
@@ -57,6 +59,7 @@ CREATE TABLE `event` (
 -- Structure de la table `User`
 --
 
+DROP TABLE IF EXISTS `User`;
 CREATE TABLE `User` (
   `usr_id` int(11) NOT NULL,
   `usr_name` varchar(100) CHARACTER SET utf8 NOT NULL,
@@ -95,7 +98,7 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT pour la table `Article`
 --
 ALTER TABLE `Article`
-  MODIFY `art_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `art_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `event`
 --
@@ -105,7 +108,7 @@ ALTER TABLE `event`
 -- AUTO_INCREMENT pour la table `User`
 --
 ALTER TABLE `User`
-  MODIFY `usr_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `usr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
