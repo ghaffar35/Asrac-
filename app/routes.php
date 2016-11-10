@@ -22,3 +22,7 @@ $app->match('/admin/article/{id}/edit', "Asrac\Controller\AdminController::editA
 
 // Remove an article
 $app->get('/admin/article/{id}/delete', "Asrac\Controller\AdminController::deleteArticleAction")->bind('admin_article_delete');
+
+// Add a user
+$app->match('/admin/user/add', "cms\Controller\AdminController::addUserAction")->bind('admin_user_add');
+
