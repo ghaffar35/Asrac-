@@ -83,7 +83,7 @@
             <br>
             <div class="row">
                 <div class="col-sm-4">
-                     <p class="text-center"><strong>Imed Hezzi</strong></p><br>
+                     <h3 class="text-center"><strong>Imed Hezzi</strong></h3><br>
                     <a href="#membre2" data-toggle="collapse">
                         <img src="{{ app.request.basepath }}/images/vice-pdt.png"  class="img-circle person" alt="vice-pdt" width="255" height="255">
                     </a>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                   <p class="text-center"><strong>Habib Azaouzi</strong></p><br>
+                   <h3 class="text-center"><strong>Habib Azaouzi</strong></h3><br>
                     <a href="#membre" data-toggle="collapse">
                         <img src="{{ app.request.basepath }}/images/president.png" class="img-circle person" alt="Président" width="255" height="255">
                     </a>
@@ -106,7 +106,7 @@
                    
                 </div>
                 <div class="col-sm-4">
-                    <p class="text-center"><strong>David Flamant</strong></p><br>
+                    <h3 class="text-center"><strong>David Flamant</strong></h3><br>
                     <a href="#membre3" data-toggle="collapse">
                         <img src="{{ app.request.basepath }}/images/vice-pdt2.png" class="img-circle person" alt="vice-pdt" width="255" height="255">
                     </a>
@@ -119,7 +119,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 text-center medaillon4">
-                    <p class="text-center"><strong>Smail Altaleb</strong></p><br>
+                    <h3 class="text-center"><strong>Smail Altaleb</strong></h3><br>
                     <a href="#membre4" data-toggle="collapse">
                         <img src="{{ app.request.basepath }}/images/tresorier.png" class="img-circle person" alt="Trésorier" width="255" height="255">
                     </a>
@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4 text-center medaillon5">
-                <p class="text-center"><strong>Gwenola Marc</strong></p><br>
+                <h3 class="text-center"><strong>Gwenola Marc</strong></h3><br>
                     <a href="#membre5" data-toggle="collapse">
                         <img src="{{ app.request.basepath }}/images/secretaire.png" class="img-circle person" alt="secretaire" width="255" height="255">
                     </a>
@@ -210,8 +210,9 @@
                             <div class="row text-center">
                                 <div class="col-sm-12">
                                     <div class="thumbnail">
-                                        <img src="paris.jpg" alt="Paris" width="400" height="300">
-                                        <p><strong>Description : </strong></p>
+                                        <img src="{{ app.request.basepath }}/images/agenda1.jpg" alt="Paris" width="400" height="300">
+                                        <p><strong>Description : Lorem ipsum we'll play you some music
+                                         </strong></p>
                                         <p>Vendredi 27 Novembre 2016</p>
                                     </div>
                                 </div>
@@ -231,7 +232,7 @@
       <h2>Notre Charte</h2>
       <p>Nos Valeurs</p>
       <p class="telechargementcharte">
-         <a class = "btn btn-hero btn-lg" role = "button">Telecharger</a>
+         <a href ="{{ app.request.basepath }}/images/Charte.pdf" class = "btn btn-hero btn-lg" role = "button">Telecharger</a>
       </p>
    </div>
    

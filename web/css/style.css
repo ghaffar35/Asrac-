@@ -17,7 +17,8 @@ font-family: 'Fjalla One', sans-serif;
 }
 
 .navbar-inverse{
-background-color:#006F5A;
+background-color:#4FC7A3;
+
 border-radius: 0;
 font-size: 16px; /*Police du texte*/
 }
@@ -141,11 +142,6 @@ font-size: 16px; /*Police du texte*/
 }
 
 
-
-
-
-
-
 /*Accueil/*
 .accueil{
   background-image: url(../images/Conseil_Administration.jpg);
@@ -174,7 +170,7 @@ font-size: 16px; /*Police du texte*/
 
 .actualite{
     width: 100%;
-    background-color: whitesmoke;
+    background-color: #1ABC9C;
     padding-top: 50px;
     padding-bottom: 100px;
 }
@@ -201,7 +197,9 @@ font-size: 16px; /*Police du texte*/
 
 
 .asso{
-    background-color:#1ABC9C ;
+    background-color:whitesmoke;
+    border: 2px;
+    border-color: #1ABC9C;
     width: 100%;
     padding-top: 50px;
     padding-bottom: 100px;
@@ -220,7 +218,7 @@ margin-left: 200px;
 .evenements{
     width: 100%;
     height: 350px;
-    background-color: whitesmoke;
+    background-color: #1ABC9C;
     padding-top: 50px;
     padding-bottom: 100px;
 }
@@ -261,7 +259,7 @@ bg-1 {
       color: #000;
   }
   .modal-header, h4, .close {
-      background-color: #333;
+      background-color: #1ABC9C;
       color: #fff !important;
       text-align: center;
       font-size: 30px;
@@ -275,7 +273,7 @@ bg-1 {
 }
 /*--------charte------------*/
 .jumbotron{
-background-color:  #1ABC9C;
+background-color:whitesmoke;
     padding-top: 50px;
     padding-bottom: 100px;
 }
@@ -291,13 +289,15 @@ background-color:  #1ABC9C;
     width: 100%;
     padding-top: 50px;
     padding-bottom: 100px;
-    background-color: whitesmoke;
 }
 
+.slideanim{
+   text-align: center; 
+}
 
 /*-------Footer-------------------*/
 .footer-distributed{
-	background-color:  #1ABC9C;
+	background-color:  whitesmoke;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 /*	width: 100%;*/
