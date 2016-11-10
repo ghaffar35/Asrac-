@@ -17,8 +17,7 @@ font-family: 'Fjalla One', sans-serif;
 }
 
 .navbar-inverse{
-background-color:#1ABC9C;
-border-color:#1ABC9C;
+background-color:#006F5A;
 border-radius: 0;
 font-size: 16px; /*Police du texte*/
 }
@@ -169,7 +168,7 @@ font-size: 16px; /*Police du texte*/
 }
 
 .articles{
-    max-height: 550px;
+   max-height: 550px;
 }
 
 
@@ -178,6 +177,11 @@ font-size: 16px; /*Police du texte*/
     background-color: whitesmoke;
     padding-top: 50px;
     padding-bottom: 100px;
+}
+
+.articles img{
+    width: 395px;
+    height: 200px;
 }
 
 /*-------------------------------------------------------------------PAGE ARTICLES-----------------*/
@@ -201,6 +205,14 @@ font-size: 16px; /*Police du texte*/
     width: 100%;
     padding-top: 50px;
     padding-bottom: 100px;
+}
+
+.medaillon4{
+margin-left: 200px;       
+}
+
+.medaillon5{
+    
 }
 
 /*---------------------------------Evenement------------------------------------------------------*/
