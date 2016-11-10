@@ -9,6 +9,19 @@ use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Asrac\Domain\User;
 
 class UserDAO extends DAO implements UserProviderInterface {
+	
+	public function findAll() {
+        $sql = "select * from User";
+        $result = $this->getDb()->fetchAll($sql);
+
+        // Convert query result to an array of domain objects
+        $entities = array();
+        foreach ($result as $row) {
+            $id = $row['usr_id'];
+            $entities[$id] = $this->buildDomainObject($row);
+        }
+        return $entities;
+    }
 
     // Returns a user matching the supplied id.
     public function find($id) {
@@ -68,10 +81,10 @@ class UserDAO extends DAO implements UserProviderInterface {
 
         if ($user->getId()) {
             // The user has already been saved : update it
-            $this->getDb()->update('t_user', $userData, array('usr_id' => $user->getId()));
+            $this->getDb()->update('User', $userData, array('usr_id' => $user->getId()));
         } else {
             // The user has never been saved : insert it
-            $this->getDb()->insert('t_user', $userData);
+            $this->getDb()->insert('User', $userData);
             // Get the id of the newly created user and set it on the entity.
             $id = $this->getDb()->lastInsertId();
             $user->setId($id);
@@ -81,7 +94,7 @@ class UserDAO extends DAO implements UserProviderInterface {
      // Removes a user from the database.
     public function delete($id) {
         // Delete the user
-        $this->getDb()->delete('t_user', array('usr_id' => $id));
+        $this->getDb()->delete('User', array('usr_id' => $id));
     }
 
 }
