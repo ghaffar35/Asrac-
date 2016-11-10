@@ -33,19 +33,33 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-     </button>
+					   <span class="icon-bar"></span>
+					   <span class="icon-bar"></span>
+					   <span class="icon-bar"></span>
+					 </button>
                     <!--Nom de l'association-->
                     <a class="navbar-brand" href="{{ path('home') }}">ASRAC</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="pages/actualite.html">Actualités</a></li>
+                        <li><a href="{{ path('all_articles') }}">Actualités</a></li>
                         <li><a href="#">Evènements</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						{% if app.user and is_granted('ROLE_ADMIN') %}
+    						<li class="{% if adminMenu is defined %}active{% endif %}"><a href="{{ path('admin') }}"><span class="glyphicon glyphicon-cog"></span> Administration</a></li>
+						{% endif %}
+						{% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
+                        	<li class="dropdown">
+                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            		<span class="glyphicon glyphicon-user"></span> Bienvenue, {{ app.user.username }} <b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="{{ path('logout') }}">Deconnexion</a></li>
+								</ul>
+                        	</li>
+                        {% else %}
+							<li><a href="{{ path('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						{% endif %}
                     </ul>
                 </div>
             </div>
