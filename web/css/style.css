@@ -422,6 +422,10 @@ background-color:  #1ABC9C;
 .contentAdmin{
     margin-top: 100px;
 }
+
+.error {
+	margin-top: 100px;
+}
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {

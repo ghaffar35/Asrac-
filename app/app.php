@@ -65,17 +65,17 @@ $app['dao.article'] = $app->share(function ($app) {
 //});
 
 // Register error handler
-//$app->error(function (\Exception $e, $code) use ($app) {
-//    switch ($code) {
-//        case 403:
-//            $message = 'accès refusé.';
-//            break;
-//        case 404:
-//            $message = 'La page demandée n\'a pas pu être trouvé.';
-//            break;
-//        default:
-//            $message = 'Quelque-chose s\'est mal passé.';
-//    }
-//    return $app['twig']->render('error.html.twig', array('message' => $message));
-//});
+$app->error(function (\Exception $e, $code) use ($app) {
+    switch ($code) {
+        case 403:
+            $message = 'accès refusé.';
+            break;
+        case 404:
+            $message = 'La page demandée n\'a pas pu être trouvé.';
+            break;
+        default:
+            $message = 'Quelque-chose s\'est mal passé.';
+    }
+    return $app['twig']->render('error.html.twig', array('message' => $message));
+});
 
