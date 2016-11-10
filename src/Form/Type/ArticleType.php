@@ -17,7 +17,8 @@ class ArticleType extends AbstractType
 			))
 			->add('theme', 'text')
 			->add('dateArt','date', array(
-    			'widget' => 'choice'
+    			'widget' => 'choice',
+				'data' => new \DateTime()
 			));
     }
 

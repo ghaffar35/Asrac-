@@ -22,7 +22,7 @@
             {% for article in articles %}
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
-                    <img src="{{ app.request.basepath }}/images/Articles/{{ article.image }}"  alt="{{ article.image }} "/>
+                    <img src="{{ app.request.basepath }}/images/{{ article.image }}"  alt="{{ article.image }} "/>
                     <div class="caption">
                         <h2>{{ article.title }}</h2>
                         <p> {{ article.dateArt|date('d-m-Y') }}</p>
