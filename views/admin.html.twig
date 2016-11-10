@@ -1,4 +1,4 @@
-{% extends "layout.html.twig" %}
+{% extends "layouts_admin.html.twig" %}
 {% set adminMenu = true %}
 
 {% block title %}Administration{% endblock %}
@@ -10,7 +10,7 @@
 			{{ flashMessage }}
 		</div>
 	{% endfor %}
-<div class="col-lg-10 col-lg-offset-1">
+<div class="col-lg-10 col-lg-offset-1 contentAdmin">
 	<div class="row">
 		<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 			<ul class="nav nav-tabs nav-justified">
