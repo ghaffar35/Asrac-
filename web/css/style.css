@@ -9,13 +9,18 @@ font-family: 'Fjalla One', sans-serif;
 /*-----Barre de navigation---*/
 .navbar{
   min-height: 60px;
-
 }
+
+.titresite{
+    font-size: 30px;
+    font-weight: 300;
+}
+
 .navbar-inverse{
 background-color:#1ABC9C;
 border-color:#1ABC9C;
 border-radius: 0;
-font-size: 20px; /*Police du texte*/
+font-size: 16px; /*Police du texte*/
 }
 /*Couleur du text*/
 .navbar-inverse .navbar-nav > li > a{
@@ -163,6 +168,11 @@ font-size: 20px; /*Police du texte*/
   color: #2F3440;
 }
 
+.articles{
+    max-height: 550px;
+}
+
+
 .actualite{
     width: 100%;
     background-color: whitesmoke;
@@ -302,13 +312,9 @@ background-color:  #1ABC9C;
 /* The company logo */
 
 .footer-distributed h3{
-	color:   #555;
+	color:   whitesmoke;
 	font: normal 36px 'Cookie', cursive;
 	margin: 0;
-}
-
-.footer-distributed h3 span{
-	color:  #5383d3;
 }
 
 /* Footer links */
@@ -322,7 +328,8 @@ background-color:  #1ABC9C;
 	display:inline-block;
 	line-height: 1.8;
 	text-decoration: none;
-	color:  inherit;
+	color:  whitesmoke;
+    
 }
 
 .footer-distributed .footer-company-name{
@@ -338,7 +345,7 @@ background-color:  #1ABC9C;
 }
 
 .footer-distributed .footer-center i{
-	background-color:  #33383b;
+	background-color:  #006F5A;
 	color: #ffffff;
 	font-size: 25px;
 	width: 38px;
@@ -359,6 +366,7 @@ background-color:  #1ABC9C;
 	display: inline-block;
 	vertical-align: middle;
 	margin:0;
+    color: #006F5A;
 }
 
 .footer-distributed .footer-center p span{
@@ -389,7 +397,7 @@ background-color:  #1ABC9C;
 
 .footer-distributed .footer-company-about span{
 	display: block;
-	color:  #555;
+	color:  #006F5A;
 	font-size: 14px;
 	font-weight: bold;
 	margin-bottom: 20px;
@@ -404,7 +412,7 @@ background-color:  #1ABC9C;
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
-	background-color:  #33383b;
+	background-color:  #006F5A;
 	border-radius: 2px;
 
 	font-size: 20px;
