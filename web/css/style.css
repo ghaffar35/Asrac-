@@ -404,6 +404,9 @@ height: 430px;
 	margin-right: 3px;
 	margin-bottom: 5px;
 }
+.contentAdmin {
+	margin-top: 100px;
+}
 
 /* If you don't want the footer to be responsive, remove these media queries */
 
