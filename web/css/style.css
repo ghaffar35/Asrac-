@@ -3,7 +3,7 @@ Barre de navigation (Couleur Primaire) :#FF9800;
 Navbar - Text :#2F3440;
  */
 body{
-    font-family: 'Lora', serif;
+font-family: 'Fjalla One', sans-serif;
 }
 
 /*-----Barre de navigation---*/
@@ -15,7 +15,7 @@ body{
 background-color:#1ABC9C;
 border-color:#1ABC9C;
 border-radius: 0;
-font-size: 15px; /*Police du texte*/
+font-size: 20px; /*Police du texte*/
 }
 /*Couleur du text*/
 .navbar-inverse .navbar-nav > li > a{
@@ -164,6 +164,7 @@ font-size: 15px; /*Police du texte*/
 }
 
 .actualite{
+    width: 100%;
     background-color: whitesmoke;
     padding-top: 50px;
     padding-bottom: 100px;
@@ -266,7 +267,8 @@ background-color:  #1ABC9C;
 #contact{
     height: 430px;
     width: 100%;
-    padding-top: 90px;
+    padding-top: 50px;
+    padding-bottom: 100px;
     background-color: whitesmoke;
 }
 
