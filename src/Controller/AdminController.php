@@ -6,13 +6,17 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Asrac\Domain\Article;
 use Asrac\Form\Type\ArticleType;
+use Asrac\Domain\User;
+use Asrac\Form\Type\UserType;
 
 class AdminController {
 
 	public function indexAction(Application $app) {
         $articles = $app['dao.article']->findAll();
+		$users = $app['dao.user']->findAll();
         return $app['twig']->render('admin.html.twig', array(
-            'articles' => $articles));
+            'articles' => $articles,
+			'users' => $users));
     }
 
 	public function addArticleAction(Request $request, Application $app) {
@@ -93,6 +97,33 @@ class AdminController {
         return $app['twig']->render('user_form.html.twig', array(
             'title' => 'New user',
             'userForm' => $userForm->createView()));
+    }
+	
+	public function editUserAction($id, Request $request, Application $app) {
+        $user = $app['dao.user']->find($id);
+        $userForm = $app['form.factory']->create(new UserType(), $user);
+        $userForm->handleRequest($request);
+        if ($userForm->isSubmitted() && $userForm->isValid()) {
+            $plainPassword = $user->getPassword();
+            // find the encoder for the user
+            $encoder = $app['security.encoder_factory']->getEncoder($user);
+            // compute the encoded password
+            $password = $encoder->encodePassword($plainPassword, $user->getSalt());
+            $user->setPassword($password); 
+            $app['dao.user']->save($user);
+            $app['session']->getFlashBag()->add('success', 'The user was succesfully updated.');
+        }
+        return $app['twig']->render('user_form.html.twig', array(
+            'title' => 'Edit user',
+            'userForm' => $userForm->createView()));
+    }
+	
+	public function deleteUserAction($id, Application $app) {
+        // Delete the user
+        $app['dao.user']->delete($id);
+        $app['session']->getFlashBag()->add('success', 'The user was succesfully removed.');
+        // Redirect to admin home page
+        return $app->redirect($app['url_generator']->generate('admin'));
     }
 }
 

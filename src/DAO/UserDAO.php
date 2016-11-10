@@ -9,6 +9,19 @@ use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Asrac\Domain\User;
 
 class UserDAO extends DAO implements UserProviderInterface {
+	
+	public function findAll() {
+        $sql = "select * from User";
+        $result = $this->getDb()->fetchAll($sql);
+
+        // Convert query result to an array of domain objects
+        $entities = array();
+        foreach ($result as $row) {
+            $id = $row['usr_id'];
+            $entities[$id] = $this->buildDomainObject($row);
+        }
+        return $entities;
+    }
 
     // Returns a user matching the supplied id.
     public function find($id) {
