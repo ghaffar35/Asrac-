@@ -3,7 +3,7 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 $app = new Silex\Application();
-$app['upload_folder']=__DIR__ . '/images/Articles';
+$app['upload_folder']=__DIR__ . '/images';
 
 require __DIR__.'/../app/config/dev.php';
 require __DIR__.'/../app/app.php';
