@@ -23,7 +23,7 @@ class AdminController {
 				if ($articleForm->isValid()) {
 					$image = $request->files->get($articleForm->getName());
 					/* Make sure that Upload Directory is properly configured and writable */
-					$path = __DIR__.'/../../web/images/Articles/';
+					$path = __DIR__.'/../../web/images';
 					$filename = $image['image']->getClientOriginalName();
 					$image['image']->move($path,$filename);
 					$article->setImage($filename);
@@ -49,7 +49,7 @@ class AdminController {
 			if ($articleForm->isValid()) {
 				$files = $request->files->get($articleForm->getName());
 				// Make sure that Upload Directory is properly configured and writable 
-				$path = __DIR__.'/../../web/images/';
+				$path = __DIR__.'/../../web/images';
 				$filename = $files['image']->getClientOriginalName();
 				$files['image']->move($path,$filename);
 				$article->setImage($filename);
