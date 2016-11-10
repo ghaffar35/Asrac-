@@ -60,22 +60,19 @@ $app->register(new Silex\Provider\TranslationServiceProvider());
 $app['dao.article'] = $app->share(function ($app) {
     return new Asrac\DAO\ArticleDAO($app['db']);
 });
-//$app['dao.user'] = $app->share(function ($app) {
-//    return new Asrac\DAO\UserDAO($app['db']);
-//});
 
 // Register error handler
-//$app->error(function (\Exception $e, $code) use ($app) {
-//    switch ($code) {
-//        case 403:
-//            $message = 'accès refusé.';
-//            break;
-//        case 404:
-//            $message = 'La page demandée n\'a pas pu être trouvé.';
-//            break;
-//        default:
-//            $message = 'Quelque-chose s\'est mal passé.';
-//    }
-//    return $app['twig']->render('error.html.twig', array('message' => $message));
-//});
+$app->error(function (\Exception $e, $code) use ($app) {
+    switch ($code) {
+        case 403:
+            $message = 'accès refusé.';
+            break;
+        case 404:
+            $message = 'La page demandée n\'a pas pu être trouvé.';
+            break;
+        default:
+            $message = 'Quelque-chose s\'est mal passé.';
+    }
+    return $app['twig']->render('error.html.twig', array('message' => $message));
+});
 
