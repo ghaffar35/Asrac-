@@ -205,14 +205,6 @@ font-size: 16px; /*Police du texte*/
     padding-bottom: 100px;
 }
 
-.medaillon4{
-margin-left: 200px;       
-}
-
-.medaillon5{
-    
-}
-
 /*---------------------------------Evenement------------------------------------------------------*/
 
 .evenements{
@@ -284,17 +276,16 @@ background-color:whitesmoke;
 
 
 /*---Formulaire de contact--*/
-#contact{
+.contact{
     height: 430px;
     width: 100%;
     padding-top: 50px;
     padding-bottom: 100px;
 }
 
-.slideanim{
-   text-align: center; 
+.titrecontact{
+padding-bottom: 30px;
 }
-
 /*-------Footer-------------------*/
 .footer-distributed{
 	background-color:  #4FC7A3;

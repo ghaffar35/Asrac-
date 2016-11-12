@@ -118,7 +118,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 text-center medaillon4">
+                <div class="col-sm-4 col-sm-offset-2 text-center">
                     <h3 class="text-center"><strong>Smail Altaleb</strong></h3><br>
                     <a href="#membre4" data-toggle="collapse">
                         <img src="{{ app.request.basepath }}/images/tresorier.png" class="img-circle person" alt="Trésorier" width="255" height="255">
@@ -129,7 +129,7 @@
                         <p>Membre depuis 2015</p>
                     </div>
                 </div>
-                <div class="col-sm-4 text-center medaillon5">
+                <div class="col-sm-4 text-center">
                 <h3 class="text-center"><strong>Gwenola Marc</strong></h3><br>
                     <a href="#membre5" data-toggle="collapse">
                         <img src="{{ app.request.basepath }}/images/secretaire.png" class="img-circle person" alt="secretaire" width="255" height="255">
@@ -241,10 +241,11 @@
     
     <!--Formulaire de contact-->
     <!-- Container (Contact Section) -->
-<div id="contact " class="container bg-grey">
+<section class=" contact container text-center">
   <div class="row">
-    <div class="col-sm-6 slideanim text-center">
+    <div class="col-md-6 col-md-offset-3">
       <div class="row">
+              <h2 class="titrecontact">Nous contactez</h2>
         <div class="col-sm-6 form-group">
           <input class="form-control" id="name" name="name" placeholder="Nom-Prenom" type="text" required>
         </div>
@@ -260,7 +261,6 @@
       </div>
     </div>
   </div>
-</div>
-    </section>
+</section>
 
  {% endblock %}
