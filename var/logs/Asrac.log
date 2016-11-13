@@ -6454,6 +6454,7 @@
 [2016-11-12 22:43:30] Asrac.INFO: Populated the TokenStorage with an anonymous Token. [] []
 [2016-11-12 22:43:30] Asrac.INFO: > GET /Asrac-/web/_profiler/wdt/7fc350 [] []
 [2016-11-12 22:43:33] Asrac.INFO: < 200 [] []
+<<<<<<< HEAD
 [2016-11-12 22:57:59] Asrac.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /lib/bootstrap.min.css.map" (uncaught exception) at C:\wamp\www\Asrac-\vendor\symfony\http-kernel\EventListener\RouterListener.php line 176 {"exception":"[object] (Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException(code: 0): No route found for \"GET /lib/bootstrap.min.css.map\" at C:\\wamp\\www\\Asrac-\\vendor\\symfony\\http-kernel\\EventListener\\RouterListener.php:176, Symfony\\Component\\Routing\\Exception\\ResourceNotFoundException(code: 0): No routes found for \"/lib/bootstrap.min.css.map\". at C:\\wamp\\www\\Asrac-\\vendor\\symfony\\routing\\Matcher\\UrlMatcher.php:98)"} []
 [2016-11-12 22:57:59] Asrac.INFO: < 404 [] []
 [2016-11-12 23:05:04] Asrac.INFO: Matched route "home". {"route_parameters":{"_controller":"Asrac\\Controller\\HomeController::indexAction","_route":"home"},"request_uri":"http://localhost/Asrac-/web/"} []
@@ -7314,3 +7315,5 @@
 [2016-11-13 23:11:28] Asrac.INFO: Populated the TokenStorage with an anonymous Token. [] []
 [2016-11-13 23:11:28] Asrac.INFO: > GET /Asrac-/web/_profiler/wdt/6093c9 [] []
 [2016-11-13 23:11:31] Asrac.INFO: < 200 [] []
+=======
+>>>>>>> b77bed212a0446f20d680ffc7c7f1d546abe9dbb
