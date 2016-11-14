@@ -63,3 +63,9 @@ class EventDAO extends DAO {
             $event->setId($id);
         }
     }
+	
+	// Removes an event from the database.
+    public function delete($id) {
+        // Delete the event
+        $this->getDb()->delete('Event', array('ev_id' => $id));
+    }
