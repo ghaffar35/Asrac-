@@ -16,9 +16,11 @@ class AdminController {
 	public function indexAction(Application $app) {
         $articles = $app['dao.article']->findAll();
 		$users = $app['dao.user']->findAll();
+		$events = $app['dao.event']->findAll();
         return $app['twig']->render('admin.html.twig', array(
             'articles' => $articles,
-			'users' => $users));
+			'users' => $users,
+			'events' => $events));
     }
 
 	public function addArticleAction(Request $request, Application $app) {
