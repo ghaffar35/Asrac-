@@ -46,7 +46,7 @@ font-size: 16px; /*Police du texte*/
     margin: 0 2px;
     background-color: #6ECCCC;
     border-color:#6ECCCC;
-    opacity: .7;
+    opacity: 1;
 }
 .fade-carousel .carousel-indicators > li.active {
   width: 10px;
@@ -120,7 +120,6 @@ font-size: 16px; /*Police du texte*/
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-    opacity: 0.8;
 }
 
 .fade-carousel .slides .slide-1 {
@@ -202,6 +201,7 @@ padding-top: 20px;
 
 .person{
 border:10px solid #fff;
+    /*object-fit: cover;*/
 }
 
 .asso h2, p{
