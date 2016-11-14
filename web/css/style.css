@@ -220,7 +220,7 @@ h3{
     height: 350px;
     background-color: #fff;
     padding-top: 80px;
-    padding-bottom: 450px;
+    padding-bottom: 500px;
 }
 
 bg-1 {
@@ -273,7 +273,7 @@ bg-1 {
       padding: 30px 40px;
   }
 
-.btn{
+.indexbtn{
   background-color: #1ABC9C;
     width: 200px;
 }
