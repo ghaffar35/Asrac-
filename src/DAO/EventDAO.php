@@ -69,3 +69,4 @@ class EventDAO extends DAO {
         // Delete the event
         $this->getDb()->delete('Event', array('ev_id' => $id));
     }
+}
