@@ -11,11 +11,8 @@ class EventType extends AbstractType {
         $builder
             ->add('title', 'text')
             ->add('lieu', 'text')
-			->add('image', 'file', array(
-                    'data_class' => null
-			))
 			->add('desc', 'textarea')
-			->add('dateArt','date', array(
+			->add('dateEv','date', array(
     			'widget' => 'choice',
 				'data' => new \DateTime()
 			));
