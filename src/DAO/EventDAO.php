@@ -50,7 +50,7 @@ class EventDAO extends DAO {
             'ev_title' => $event->getTitle(),
             'ev_lieu' => $event->getLieu(),
 			'ev_date' => $event->getdateEv()->format('Y-m-d H:i:s'),
-			'ev_image' => $event->getImage,
+			'ev_image' => $event->getImage(),
 			'ev_desc' => $event->getDesc()
             );
 

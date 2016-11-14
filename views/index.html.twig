@@ -147,6 +147,7 @@
     </section>
     <!--Evenement-->
     <section class="container text center evenements">
+<<<<<<< HEAD
 <!--	{% for event in events %}-->
 <!--		{% endfor %}-->
         <div id="tour" class="bg-1 text-center">
@@ -177,7 +178,7 @@
             <!-- Modal agenda mois-->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
-
+					
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
@@ -186,33 +187,19 @@
                         </div>
                         <div class="modal-body">
                             <div class="row text-center">
-                                <div class="col-sm-4">
-                                    <div class="thumbnail thumbmodal">
-                                        <img src="{{ app.request.basepath }}/images/agenda1.jpg" alt="Rennes Sud" width="700" height="500">
-                                        <p><strong>Evénement x</strong></p>
-                                        <p><strong>Rennes Sud</strong></p>
-                                        <p>Vendredi 27 Novembre 2016</p>
-                                        <button class="btn" data-toggle="modal" data-target="#Modal2">+ de détails</button>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="thumbnail thumbmodal">
-                                        <img src="{{ app.request.basepath }}/images/agenda1.jpg" alt="Rennes Nord" width="700" height="500">
-                                        <p><strong>Evénement y</strong></p>
-                                        <p><strong>Rennes Nord</strong></p>
-                                        <p>Samedi 28 Novembre 2016</p>
-                                        <button class="btn" data-toggle="modal" data-target="#myModal">+ de détails</button>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="thumbnail thumbmodal">
-                                        <img src="{{ app.request.basepath }}/images/agenda1.jpg" alt="Rennes Est" width="700" height="500">
-                                        <p><strong>Evénement z</strong></p>
-                                        <p><strong>Rennes Est</strong></p>
-                                        <p>Dimanche 29 Novembre 2016</p>
-                                        <button class="btn" data-toggle="modal" data-target="#myModal">+ de détails</button>
-                                    </div>
-                                </div>
+								{% for event in events|slice(0,3) %} 
+									{% if event.dateEv|date('m') == 07  %}
+									<div class="col-sm-4">
+										<div class="thumbnail thumbmodal">
+											<img src="{{ app.request.basepath }}/images/{{event.image}}" alt="Rennes Sud" width="700" height="500">
+											<p><strong>{{event.title}} x</strong></p>
+											<p><strong>{{event.lieu}}</strong></p>
+											<p>{{event.dateEv|date('d-m-Y')}}</p>
+											<button class="btn" data-toggle="modal" data-target="#Modal2">+ de détails</button>
+										</div>
+									</div>
+									{% endif %}
+								{% endfor %}
                             </div>
                         </div>
                     </div>
@@ -241,7 +228,6 @@
                 </div>
             </div>
         </div>
-
     </section>
     <!--Charte de l'association-->
     <section class="charte">  
