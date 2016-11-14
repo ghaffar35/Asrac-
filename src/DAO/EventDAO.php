@@ -38,6 +38,7 @@ class EventDAO extends DAO {
         $event->setTitle($row['ev_title']);
         $event->setLieu($row['ev_lieu']);
 		$event->setDateEv($row['ev_date']);
+		$event->setImage($row['ev_image']);
 		$event->setDesc($row['ev_desc']);
         return $event;
     }
@@ -49,6 +50,7 @@ class EventDAO extends DAO {
             'ev_title' => $event->getTitle(),
             'ev_lieu' => $event->getLieu(),
 			'ev_date' => $event->getdateEv()->format('Y-m-d H:i:s'),
+			'ev_image' => $event->getImage,
 			'ev_desc' => $event->getDesc()
             );
 
