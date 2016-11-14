@@ -41,3 +41,25 @@ class EventDAO extends DAO {
 		$event->setDesc($row['ev_desc']);
         return $event;
     }
+
+	// Saves an Event into the database.
+    public function save(Event $event) {
+
+        $eventData = array(
+            'ev_title' => $event->getTitle(),
+            'ev_lieu' => $event->getLieu(),
+			'ev_date' => $event->getdateEv()->format('Y-m-d H:i:s'),
+			'ev_desc' => $event->getDesc()
+            );
+
+//        if ($article->getId()) {
+//            // The article has already been saved : update it
+//            $this->getDb()->update('Article', $articleData, array('art_id' => $article->getId()));
+//        } else {
+//            // The article has never been saved : insert it
+//            $this->getDb()->insert('Article', $articleData);
+//            // Get the id of the newly created article and set it on the entity.
+//            $id = $this->getDb()->lastInsertId();
+//            $article->setId($id);
+//        }
+    }
