@@ -7,6 +7,7 @@ class Event {
     private $title;
     private $lieu;
     private $dateEv;
+	private $image;
     private $desc;
 	
 	public function getId() {
@@ -46,6 +47,14 @@ class Event {
 			$dateEv = $dateEv->format('Y-m-d H:i:s');
 		}
         $this->dateEv = $dateEv;
+    }
+
+	public function getImage() {
+        return $this->image;
+    }
+
+    public function setImage($image) {
+        $this->image = $image;
     }
 
 	public function getDesc() {
