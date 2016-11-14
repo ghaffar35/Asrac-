@@ -19,3 +19,14 @@ class EventDAO extends DAO {
         }
         return $events;
     }
+
+	//Return one event with id
+	public function find($id) {
+        $sql = "select * from Event order by ev_id=?";
+        $row = $this->getDb()->fetchAssoc($sql, array($id));
+
+        if ($row)
+            return $this->buildDomainObject($row);
+        else
+            throw new \Exception("No event matching id " . $id);
+    }
