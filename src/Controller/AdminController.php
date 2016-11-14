@@ -8,6 +8,8 @@ use Asrac\Domain\Article;
 use Asrac\Form\Type\ArticleType;
 use Asrac\Domain\User;
 use Asrac\Form\Type\UserType;
+use Asrac\Domain\Event;
+use Asrac\Form\Type\EventType;
 
 class AdminController {
 
