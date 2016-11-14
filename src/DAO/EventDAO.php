@@ -52,14 +52,14 @@ class EventDAO extends DAO {
 			'ev_desc' => $event->getDesc()
             );
 
-//        if ($article->getId()) {
-//            // The article has already been saved : update it
-//            $this->getDb()->update('Article', $articleData, array('art_id' => $article->getId()));
-//        } else {
-//            // The article has never been saved : insert it
-//            $this->getDb()->insert('Article', $articleData);
-//            // Get the id of the newly created article and set it on the entity.
-//            $id = $this->getDb()->lastInsertId();
-//            $article->setId($id);
-//        }
+        if ($event->getId()) {
+            // The event has already been saved : update it
+            $this->getDb()->update('Event', $eventData, array('ev_id' => $event->getId()));
+        } else {
+            // The event has never been saved : insert it
+            $this->getDb()->insert('Event', $eventData);
+            // Get the id of the newly created event and set it on the entity.
+            $id = $this->getDb()->lastInsertId();
+            $event->setId($id);
+        }
     }
