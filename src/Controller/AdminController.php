@@ -137,11 +137,32 @@ class AdminController {
 			
 			if ($eventForm->isSubmitted() && $eventForm->isValid()) {
 				$app['dao.event']->save($event);
-				$app['session']->getFlashBag()->add('success', 'The article was successfully created.');
+				$app['session']->getFlashBag()->add('success', 'The event was successfully created.');
 			}
 			return $app['twig']->render('event_form.html.twig', array(
 				'title' => 'New event',
 				'eventForm' => $eventForm->createView()));
 	}
+	
+	public function editEventAction($id, Request $request, Application $app) {
+        $event = $app['dao.event']->find($id);
+        $eventForm = $app['form.factory']->create(new EventType(), $event);
+        $eventForm->handleRequest($request);
+        if ($eventForm->isSubmitted() && $eventForm->isValid()) {
+            $app['dao.event']->save($event);
+            $app['session']->getFlashBag()->add('success', 'The event was succesfully updated.');
+        }
+        return $app['twig']->render('event_form.html.twig', array(
+            'title' => 'Edit event',
+            'eventForm' => $eventForm->createView()));
+    }
+	
+	public function deleteEventAction($id, Application $app) {
+        // Delete the event
+        $app['dao.event']->delete($id);
+        $app['session']->getFlashBag()->add('success', 'The event was succesfully removed.');
+        // Redirect to admin home page
+        return $app->redirect($app['url_generator']->generate('admin'));
+    }
 }
 

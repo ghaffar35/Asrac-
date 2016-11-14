@@ -16,6 +16,7 @@
 			<ul class="nav nav-tabs nav-justified">
 				<li class="active"><a href="#articles" data-toggle="tab">Articles</a></li>
 				<li><a href="#users" data-toggle="tab">Utilisateurs</a></li>
+				<li><a href="#events" data-toggle="tab">Event</a></li>
 			</ul>
 		</div>
 	</div>
@@ -118,7 +119,7 @@
 			{% endif %}
 			<a href="{{ path('admin_user_add') }}"><button type="button" class="btn btn-primary btnAdd"><span class="glyphicon glyphicon-plus"></span> Ajouter utilisateur</button></a>
 		</div>
-		<div class="tab-pane fade in active adminTable" id="events">
+		<div class="tab-pane fade adminTable" id="events">
 			{% if events %}
 			<div class="table-responsive">
 				<table class="table table-hover table-condensed">
@@ -132,12 +133,12 @@
 					</thead>
 					{% for event in events %}
 					<tr>
-						<td><a class="eventTitle" href="{{ path('event', { 'id': event.id }) }}">{{ event.title }}</a></td>
+						<td><a class="eventTitle" href="">{{ event.title }}</a></td>
 						<td>{{ event.Lieu }}</td>
 						<td>{{ event.dateEv|date('d-m-Y') }}</td>
 						<td>
-							<a href="{{ path('admin_event_edit', { 'id': event.id }) }}" class="btn btn-info btn-xs" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
-							<button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#eventDialog{{ event.id }}"><span class="glyphicon glyphicon-remove"></span>
+							<a href="{{ path('admin_event_edit', { 'id': event.id }) }}" class="btn btn-info btn-xs btnEdi" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+							<button type="button" class="btn btn-danger btn-xs btnSup" title="Delete" data-toggle="modal" data-target="#eventDialog{{ event.id }}"><span class="glyphicon glyphicon-remove"></span>
 							</button>
 							<div class="modal fade" id="eventDialog{{ event.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 								<div class="modal-dialog">
@@ -164,7 +165,7 @@
 			{% else %}
 			<div class="alert alert-warning">Aucun article trouvé.</div>
 			{% endif %}
-			<a href="{{ path('admin_event_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter un article</button></a>
+			<a href="{{ path('admin_event_add') }}"><button type="button" class=" btnAdd btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter un event</button></a>
 		</div>
 	</div>
 </div>
