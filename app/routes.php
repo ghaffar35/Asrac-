@@ -32,3 +32,12 @@ $app->match('/admin/user/{id}/edit', "Asrac\Controller\AdminController::editUser
 // Remove a user
 $app->get('/admin/user/{id}/delete', "Asrac\Controller\AdminController::deleteUserAction")->bind('admin_user_delete');
 
+// Add a event
+$app->match('/admin/event/add', "Asrac\Controller\AdminController::addEventAction")->bind('admin_event_add');
+
+// Edit an existing event
+$app->match('/admin/event/{id}/edit', "Asrac\Controller\AdminController::editEventAction")->bind('admin_event_edit');
+
+// Remove a event
+$app->get('/admin/event/{id}/delete', "Asrac\Controller\AdminController::deleteEventAction")->bind('admin_event_delete');
+

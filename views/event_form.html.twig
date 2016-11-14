@@ -1,0 +1,64 @@
+{% extends 'layouts_admin.html.twig' %}
+{% set adminMenu = true %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+	<h2 class="text-center">{{ block('title') }}</h2>
+	{% for flashMessage in app.session.flashbag.get('success') %}
+		<div class="alert alert-success">
+			{{ flashMessage }}
+		</div>
+	{% endfor %}
+
+	<div class="well col-lg-offset-0 col-lg-9 col-lg-offset-3">
+	{{ form_start(eventForm, { 'attr': {'class': 'form-horizontal'} }) }}
+		<div class="form-group">
+			{{ form_label(eventForm.title, null, { 'label_attr':  {
+				'class': 'col-sm-4 control-label'
+			}}) }}
+			<div class="col-sm-6">
+				{{ form_errors(eventForm.title) }}
+				{{ form_widget(eventForm.title, { 'attr':  {
+					'class': 'form-control'
+				}}) }}
+			</div>
+		</div>
+		<div class="form-group">
+			{{ form_label(eventForm.lieu, null, { 'label_attr':  {
+				'class': 'col-sm-4 control-label'
+			}}) }}
+			<div class="col-sm-6">
+				{{ form_errors(eventForm.lieu) }}
+				{{ form_widget(eventForm.lieu, { 'attr':  {
+					'class': 'form-control',
+					'rows': '8'
+				}}) }}
+			</div>
+		</div>
+		<div class="form-group">
+			{{ form_label(eventForm.dateEv, null, { 'label_attr':  {
+				'class': 'col-sm-4 control-label'
+			}}) }}
+			<div class="col-sm-6">
+				{{ form_errors(eventForm.dateEv) }}
+				{{ form_widget(eventForm.dateEv) }}
+			</div>
+		</div>
+		<div class="form-group">
+			{{ form_label(eventForm.desc, null, { 'label_attr':  {
+				'class': 'col-sm-4 control-label'
+			}}) }}
+			<div class="col-sm-6">
+				{{ form_errors(eventForm.desc) }}
+				{{ form_widget(eventForm.desc) }}
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-4 col-sm-3">
+				<input type="submit" class="btn btn-primary" value="Save" />
+			</div>
+		</div>
+	{{ form_end(eventForm) }}
+	</div>
+{% endblock %}

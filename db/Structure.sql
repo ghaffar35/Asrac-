@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 10 Novembre 2016 à 10:30
+-- Généré le :  Lun 14 Novembre 2016 à 10:03
 -- Version du serveur :  5.7.16-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.8-0ubuntu0.16.04.3
 
@@ -28,7 +28,6 @@ USE `Asrac`;
 -- Structure de la table `Article`
 --
 
-DROP TABLE IF EXISTS `Article`;
 CREATE TABLE `Article` (
   `art_id` int(11) NOT NULL,
   `art_title` text CHARACTER SET utf8mb4 NOT NULL,
@@ -41,11 +40,10 @@ CREATE TABLE `Article` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `event`
+-- Structure de la table `Event`
 --
 
-DROP TABLE IF EXISTS `event`;
-CREATE TABLE `event` (
+CREATE TABLE `Event` (
   `ev_id` int(11) NOT NULL,
   `ev_title` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
   `ev_lieu` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
@@ -59,7 +57,6 @@ CREATE TABLE `event` (
 -- Structure de la table `User`
 --
 
-DROP TABLE IF EXISTS `User`;
 CREATE TABLE `User` (
   `usr_id` int(11) NOT NULL,
   `usr_name` varchar(100) CHARACTER SET utf8 NOT NULL,
@@ -79,9 +76,9 @@ ALTER TABLE `Article`
   ADD PRIMARY KEY (`art_id`);
 
 --
--- Index pour la table `event`
+-- Index pour la table `Event`
 --
-ALTER TABLE `event`
+ALTER TABLE `Event`
   ADD PRIMARY KEY (`ev_id`);
 
 --
@@ -100,15 +97,15 @@ ALTER TABLE `User`
 ALTER TABLE `Article`
   MODIFY `art_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT pour la table `event`
+-- AUTO_INCREMENT pour la table `Event`
 --
-ALTER TABLE `event`
+ALTER TABLE `Event`
   MODIFY `ev_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `User`
 --
 ALTER TABLE `User`
-  MODIFY `usr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `usr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

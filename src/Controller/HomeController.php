@@ -8,7 +8,10 @@ use Symfony\Component\HttpFoundation\Request;
 class HomeController {
     public function indexAction(Application $app) {
         $articles = $app['dao.article']->findAll();
-        return $app['twig']->render('index.html.twig', array('articles' => $articles));
+		$events = $app['dao.event']->findAll();
+        return $app['twig']->render('index.html.twig', array('articles' => $articles,
+			'events' => $events
+			));
     }
 
 	public function allArticles(Application $app) {

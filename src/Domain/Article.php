@@ -43,7 +43,7 @@ class Article {
     }
 	public function getDateArt() {
 
-		if(is_string($this->dateArt)){
+		if(is_string($this->dateArt)) {
 			$this->dateArt = \DateTime::createFromFormat('Y-m-d H:i:s', $this->dateArt);
 		}
         return $this->dateArt;

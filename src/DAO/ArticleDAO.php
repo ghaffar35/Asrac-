@@ -4,8 +4,8 @@ namespace Asrac\DAO;
 
 use Asrac\Domain\Article;
 
-class ArticleDAO extends DAO
-{
+class ArticleDAO extends DAO {
+
     // Return a list of all articles, sorted by date (most recent first).
     public function findAll() {
         $sql = "select * from Article order by art_id desc";

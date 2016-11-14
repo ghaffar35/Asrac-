@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 10 Novembre 2016 à 11:34
+-- Généré le :  Lun 14 Novembre 2016 à 10:03
 -- Version du serveur :  5.7.16-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.8-0ubuntu0.16.04.3
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `Asrac`
 --
+CREATE DATABASE IF NOT EXISTS `Asrac` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `Asrac`;
 
 --
 -- Contenu de la table `Article`
@@ -36,7 +38,8 @@ INSERT INTO `Article` (`art_id`, `art_title`, `art_content`, `art_image`, `art_d
 --
 
 INSERT INTO `User` (`usr_id`, `usr_name`, `usr_password`, `usr_salt`, `usr_role`) VALUES
-(2, 'JohnDoe', 'L2nNR5hIcinaJkKR+j4baYaZjcHS0c3WX2gjYF6Tmgl1Bs+C9Qbr+69X8eQwXDvw0vp73PrcSeT0bGEW5+T2hA==', 'YcM=A$nsYzkyeDVjEUa7W9K', 'ROLE_ADMIN');
+(2, 'asrac', '878RSOdeCgTKDeb9I4Y5X34+ggkFlz7lVxizZx84Cc2Ny9bSwYIkv9LOo60fue/el6P+4zzxQS6Qe0pQPIDGwg==', 'YcM=A$nsYzkyeDVjEUa7W9K', 'ROLE_ADMIN'),
+(4, 'root', 'BATkj6VhKV18XeRfN4FoPaLVrdSScAvCGqBAwjbtqoQtz2X+eclKkQidbFCnOh0q5Os8ptr2Hw/Fg7TP0lzsrA==', '40b116d4da3556ccb0eb9a5', 'ROLE_ADMIN');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

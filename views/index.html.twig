@@ -76,7 +76,7 @@
 
     <!--Association-->
     <section class="container text-center asso">
-            <h2>ASRAC</h2>
+            <h1>ASRAC</h1>
             <p><em>ipsum dolor!</em></p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
                 irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt </p>
@@ -118,7 +118,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 col-lg-offset-2 text-center medaillon4">
+
+                <div class="col-sm-4 col-sm-offset-2 text-center">
+
                     <h3 class="text-center"><strong>Smail Altaleb</strong></h3><br>
                     <a href="#membre4" data-toggle="collapse">
                         <img src="{{ app.request.basepath }}/images/tresorier.png" class="img-circle person" alt="Trésorier" width="255" height="255">
@@ -129,7 +131,7 @@
                         <p>Membre depuis 2015</p>
                     </div>
                 </div>
-                <div class="col-sm-4 text-center medaillon5">
+                <div class="col-sm-4 text-center">
                 <h3 class="text-center"><strong>Gwenola Marc</strong></h3><br>
                     <a href="#membre5" data-toggle="collapse">
                         <img src="{{ app.request.basepath }}/images/secretaire.png" class="img-circle person" alt="secretaire" width="255" height="255">
@@ -145,8 +147,10 @@
     </section>
     <!--Evenement-->
     <section class="container text center evenements">
+<!--		{% for event in events %}-->
+<!--		{% endfor %}-->
         <div id="tour" class="bg-1">
-                <h2 class="text-center">Les Events</h2>
+                <h2 class="text-center"><i class="fa fa-calendar-o i1" aria-hidden="true"></i> Nos Events</h2>
                 <p class="text-center">Lorem ipsum we'll play you some music.<br> Lorem ipsum we'll play you some music</p>
                 <ul class="list-group">
                     <li class="list-group-item" data-toggle="modal" data-target="#myModal">Novembre <span class="badge">3</span></li>
@@ -235,7 +239,7 @@ margin-left: 200px;
         <div class = "jumbotron">
    
    <div class = "container text-center">
-      <h2>Notre Charte</h2>
+      <h2><i class="fa fa-handshake-o" aria-hidden="true"></i>Notre Charte</h2>
       <p>Nos Valeurs</p>
       <p class="telechargementcharte">
          <a href ="{{ app.request.basepath }}/images/Charte.pdf" class = "btn btn-hero btn-lg" role = "button">Telecharger</a>
@@ -247,10 +251,11 @@ margin-left: 200px;
     
     <!--Formulaire de contact-->
     <!-- Container (Contact Section) -->
-<div id="contact " class="container bg-grey">
+<section class=" contact container text-center">
   <div class="row">
-    <div class="col-sm-6 slideanim text-center">
+    <div class="col-md-6 col-md-offset-3">
       <div class="row">
+              <h2 class="titrecontact"><i class="fa fa-telegram" aria-hidden="true"></i>Nous contactez</h2>
         <div class="col-sm-6 form-group">
           <input class="form-control" id="name" name="name" placeholder="Nom-Prenom" type="text" required>
         </div>
@@ -266,7 +271,6 @@ margin-left: 200px;
       </div>
     </div>
   </div>
-</div>
-    </section>
+</section>
 
  {% endblock %}
