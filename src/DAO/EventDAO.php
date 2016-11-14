@@ -33,11 +33,11 @@ class EventDAO extends DAO {
 
 	// Creates an Event object based on a DB row.
     protected function buildDomainObject($row) {
-        $article = new Article();
-        $article->setId($row['ev_id']);
-        $article->setTitle($row['ev_title']);
-        $article->setLieu($row['ev_lieu']);
-		$article->setDateEv($row['ev_date']);
-		$article->setDesc($row['ev_desc']);
-        return $article;
+        $event = new Event();
+        $event->setId($row['ev_id']);
+        $event->setTitle($row['ev_title']);
+        $event->setLieu($row['ev_lieu']);
+		$event->setDateEv($row['ev_date']);
+		$event->setDesc($row['ev_desc']);
+        return $event;
     }
