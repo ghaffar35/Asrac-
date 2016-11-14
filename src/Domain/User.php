@@ -3,8 +3,7 @@ namespace Asrac\Domain;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 
-class User implements UserInterface
-{
+class User implements UserInterface {
 
     private $id;
     private $username;
@@ -36,18 +35,15 @@ class User implements UserInterface
         $this->password = $password;
     }
 
-    public function getSalt()
-    {
+    public function getSalt() {
         return $this->salt;
     }
 
-    public function setSalt($salt)
-    {
+    public function setSalt($salt) {
         $this->salt = $salt;
     }
 
-    public function getRole()
-    {
+    public function getRole() {
         return $this->role;
     }
 
@@ -55,8 +51,7 @@ class User implements UserInterface
         $this->role = $role;
     }
 
-    public function getRoles()
-    {
+    public function getRoles() {
         return array($this->getRole());
     }
 

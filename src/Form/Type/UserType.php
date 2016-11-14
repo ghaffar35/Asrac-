@@ -5,10 +5,9 @@ namespace Asrac\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class UserType extends AbstractType
-{
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
+class UserType extends AbstractType {
+   
+	public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
             ->add('username', 'text')
             ->add('password', 'repeated', array(
@@ -23,8 +22,7 @@ class UserType extends AbstractType
             ));
     }
 	
-    public function getName()
-    {
+    public function getName() {
         return 'user';
     }
 }
