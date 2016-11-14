@@ -21,3 +21,4 @@ class EventType extends AbstractType {
     public function getName() {
         return 'event';
     }
+}
