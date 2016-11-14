@@ -184,8 +184,8 @@
                         </div>
                         <div class="modal-body">
                             <div class="row text-center">
-								{% for event in events|slice(0,3) %} 
-									{% if event.dateEv|date('m') == 07  %}
+								{% for event in events %} 
+									
 									<div class="col-sm-4">
 										<div class="thumbnail thumbmodal">
 											<img src="{{ app.request.basepath }}/images/{{event.image}}" alt="Rennes Sud" width="700" height="500">
@@ -195,7 +195,7 @@
 											<button class="btn" data-toggle="modal" data-target="#Modal2">+ de détails</button>
 										</div>
 									</div>
-									{% endif %}
+									
 								{% endfor %}
                             </div>
                         </div>

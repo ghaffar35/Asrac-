@@ -8,7 +8,10 @@ class EventDAO extends DAO {
 
 	// Return a list of all Event, sorted by date (most recent first).
     public function findAll() {
-        $sql = "select * from Event order by ev_id desc";
+		$date = new \DateTime();
+		$endDate = new \DateTime();
+		$endDate->add(new \DateInterval('P6M'));
+        $sql = "select * from Event where ev_date BETWEEN '".$date->format('Y-m-d H:i:s')."' AND '".$endDate->format('Y-m-d H:i:s')."' order by ev_id desc";
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
