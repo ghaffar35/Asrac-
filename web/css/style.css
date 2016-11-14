@@ -452,4 +452,25 @@ padding-bottom: 30px;
 	}
 
 }
- 
+
+/************** css Admin zone ****************/
+
+.contentAdmin {
+	margin-top: 80px;
+}
+
+.btnSup { 
+  background-color: #d9534f; 
+}
+
+.btnEdi { 
+  background-color: #5bc0de; 
+}
+
+.btnAdd { 
+  background-color: #337ab7; 
+}
+
+.error { 
+  margin-top: 100px; 
+} 
