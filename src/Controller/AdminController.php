@@ -129,5 +129,19 @@ class AdminController {
         // Redirect to admin home page
         return $app->redirect($app['url_generator']->generate('admin'));
     }
+	
+	public function addEventAction(Request $request, Application $app) {
+			$event = new Event();
+			$eventForm = $app['form.factory']->create(new EventType(), $event);
+			$eventForm->handleRequest($request);
+			
+			if ($eventForm->isSubmitted() && $eventForm->isValid()) {
+				$app['dao.event']->save($event);
+				$app['session']->getFlashBag()->add('success', 'The article was successfully created.');
+			}
+			return $app['twig']->render('event_form.html.twig', array(
+				'title' => 'New event',
+				'eventForm' => $eventForm->createView()));
+	}
 }
 
