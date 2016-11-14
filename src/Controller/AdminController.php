@@ -134,6 +134,17 @@ class AdminController {
 			$event = new Event();
 			$eventForm = $app['form.factory']->create(new EventType(), $event);
 			$eventForm->handleRequest($request);
+			if ($request->isMethod('POST')) {
+				if ($eventForm->isValid()) {
+					$image = $request->files->get($eventForm->getName());
+					/* Make sure that Upload Directory is properly configured and writable */
+					$path = __DIR__.'/../../web/images';
+					$filename = $image['image']->getClientOriginalName();
+					$image['image']->move($path,$filename);
+					$event->setImage($filename);
+					$message = 'File was successfully uploaded!';
+				}
+			}
 			
 			if ($eventForm->isSubmitted() && $eventForm->isValid()) {
 				$app['dao.event']->save($event);
@@ -148,6 +159,17 @@ class AdminController {
         $event = $app['dao.event']->find($id);
         $eventForm = $app['form.factory']->create(new EventType(), $event);
         $eventForm->handleRequest($request);
+		if ($request->isMethod('POST')) {
+				if ($eventForm->isValid()) {
+					$image = $request->files->get($eventForm->getName());
+					/* Make sure that Upload Directory is properly configured and writable */
+					$path = __DIR__.'/../../web/images';
+					$filename = $image['image']->getClientOriginalName();
+					$image['image']->move($path,$filename);
+					$event->setImage($filename);
+					$message = 'File was successfully uploaded!';
+				}
+			}
         if ($eventForm->isSubmitted() && $eventForm->isValid()) {
             $app['dao.event']->save($event);
             $app['session']->getFlashBag()->add('success', 'The event was succesfully updated.');
