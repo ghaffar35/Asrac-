@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 class HomeController {
     public function indexAction(Application $app) {
         $articles = $app['dao.article']->findAll();
+		$slides = $app['dao.slide']->findAll();
 		$events = $app['dao.event']->findByDate();
 		$result = [];
 		$date = new \DateTime();
@@ -21,6 +22,7 @@ class HomeController {
 
         return $app['twig']->render('index.html.twig', array('articles' => $articles,
 			'events' => $result,
+			'slides' => $slides,
 			'months' => ['01'=> 'Janvier', 
 						 '02'=>'Fevrier', 
 						 '03'=>'Mars',
