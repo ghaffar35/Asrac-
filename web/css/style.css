@@ -312,7 +312,24 @@ background-color:#6ECCCC;
 .titrecontact{
 padding-bottom: 30px;
 }
+
 /*-------Footer-------------------*/
+
+#footerWrapper p{
+    color: whitesmoke;
+}
+
+#mainFooter{
+background-color: #333;
+}
+
+.socialNetwork{
+    list-style: none;
+}
+
+
+
+
 /*.footer-distributed{
 	background-color:  #404C4C;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
