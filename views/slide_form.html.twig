@@ -1,0 +1,55 @@
+{% extends 'layouts_admin.html.twig' %}
+{% set adminMenu = true %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+	<h2 class="text-center">{{ block('title') }}</h2>
+	{% for flashMessage in app.session.flashbag.get('success') %}
+		<div class="alert alert-success">
+			{{ flashMessage }}
+		</div>
+	{% endfor %}
+
+	<div class="well col-lg-offset-0 col-lg-9 col-lg-offset-3">
+	{{ form_start(eventForm, { 'attr': {'class': 'form-horizontal'} }) }}
+		<div class="form-group">
+			{{ form_label(slideForm.title, null, { 'label_attr':  {
+				'class': 'col-sm-4 control-label'
+			}}) }}
+			<div class="col-sm-6">
+				{{ form_errors(slideForm.title) }}
+				{{ form_widget(slideForm.title, { 'attr':  {
+					'class': 'form-control'
+				}}) }}
+			</div>
+		</div>
+		<div class="form-group">
+			{{ form_label(slideForm.subTitle, null, { 'label_attr':  {
+				'class': 'col-sm-4 control-label'
+			}}) }}
+			<div class="col-sm-6">
+				{{ form_errors(slideForm.subTitle) }}
+				{{ form_widget(slideForm.subTitle, { 'attr':  {
+					'class': 'form-control',
+					'rows': '8'
+				}}) }}
+			</div>
+		</div>
+		<div class="form-group">
+			{{ form_label(slideForm.image, null, { 'label_attr':  {
+				'class': 'col-sm-4 control-label'
+			}}) }}
+			<div class="col-sm-6">
+				{{ form_errors(slideForm.image) }}
+				{{ form_widget(slideForm.image) }}
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-4 col-sm-3">
+				<input type="submit" class="btn btn-primary" value="Save" />
+			</div>
+		</div>
+	{{ form_end(slideForm) }}
+	</div>
+{% endblock %}
