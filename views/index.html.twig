@@ -140,16 +140,12 @@
     
     <!--Evenement-->
     <section class="container text-center evenements">
-<!--	{% for event in events %}-->
-<!--		{% endfor %}-->
         <div id="tour" class="bg-1 text-center">
                <i class="fa fa-calendar-o fa-3x i1" aria-hidden="true"></i>
                 <h2 class="text-center">Nos Events</h2>
-
                 <p class="text-center">Lorem ipsum we'll play you some music.<br> Lorem ipsum we'll play you some music</p>
-
          <div class="row">    
-            <ul class="col-sm-12 list-group ">
+            <ul class="col-md-8 col-md-offset-2 list-group text-center events">
 					{% for key, array_event in events %} 
                     <li class="list-group-item" data-toggle="modal" data-target="#{{ key }}">{{ months[key] }}<span class="badge">{{ array_event|length }}</span></li>
                     
