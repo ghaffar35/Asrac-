@@ -38,7 +38,7 @@
 					   <span class="icon-bar"></span>
 					 </button>
                     <!--Nom de l'association-->
-                    <a class="navbar-brand" href="{{ path('home') }}">ASRAC</a>
+                    <a class="navbar-brand titresite" href="{{ path('home') }}">ASRAC</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
@@ -46,7 +46,7 @@
                         <li><a href="#">Evènements</a></li>
                         <li><a href="#">Contact</a></li>
 						{% if app.user and is_granted('ROLE_ADMIN') %}
-    						<li><a href="{{ path('admin') }}"><span class="glyphicon glyphicon-cog"></span> Administration</a></li>
+    						<li class="{% if adminMenu is defined %}active{% endif %}"><a href="{{ path('admin') }}"><span class="glyphicon glyphicon-cog"></span> Administration</a></li>
 						{% endif %}
 						{% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
                         	<li class="dropdown">
@@ -56,7 +56,7 @@
 								<ul class="dropdown-menu">
 									<li><a href="{{ path('logout') }}">Deconnexion</a></li>
 								</ul>
-                        	</li> 
+                        	</li>
 						{% endif %}
                     </ul>
                 </div>
