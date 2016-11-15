@@ -59,7 +59,9 @@
                         <div class="thumbnail articles">
                             <img src="{{ app.request.basepath }}/images/{{ article.image }}"  alt="{{ article.image }} "/>
                             <div class="caption">
-                                <h2>{{ article.title }}</h2>
+                                <h2>
+									<a class="articleTitle" href="{{ path('article', { 'id': article.id }) }}">{{ article.title }}</a>
+								</h2>
                                 <p>{{ article.dateArt|date('d-m-Y') }}</p>
                                 <p class="text-justify">
                                   {{ article.content | truncate(300) }}
