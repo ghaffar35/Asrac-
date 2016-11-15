@@ -40,4 +40,25 @@ class SlideDAO extends DAO {
 		$slide->setImage($row['sl_image']);
         return $slide;
     }
+
+	// Saves an Slide into the database.
+    public function save(Slide $slide) {
+        $slideData = array(
+            'sl_title' => $event->getTitle(),
+            'sl_lieu' => $event->getSubTitle(),
+			'sl_image' => $event->getImage()
+            );
+
+        if ($slide->getId()) {
+            // The slide has already been saved : update it
+            $this->getDb()->update('Slide', $slideData, array('sl_id' => $slide->getId()));
+        }
+		else {
+            // The slide has never been saved : insert it
+            $this->getDb()->insert('Slide', $slideData);
+            // Get the id of the newly created slide and set it on the entity.
+            $id = $this->getDb()->lastInsertId();
+            $slide->setId($id);
+        }
+    }
 }
