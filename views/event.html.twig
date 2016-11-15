@@ -11,7 +11,7 @@
                     <img src="{{ app.request.basepath }}/images/{{ event.image }}"  alt="{{ event.image }} "/>
                     <div class="caption">
                         <h2>{{ event.title }}</h2>
-                        <p> {{ event.dateArt|date('d-m-Y') }}</p>
+                        <p> {{ event.dateEv|date('d-m-Y') }}</p>
                         <p class="text-justify"> Decription : 
                             {{ event.content}}
                         </p>
