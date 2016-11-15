@@ -182,11 +182,12 @@ font-size: 16px; /*Police du texte*/
 /*------------------------------------Page article seul--------------------------*/
 
 .article{
-  
+  margin-top: 80px;
+    margin-bottom: 100px;
 }
 
 .article img{
-    width: 70%;
+    width: 200px;
     height: 5%;
 }
 
@@ -235,10 +236,33 @@ h3{
     padding-bottom: 500px;
 }
 
+.thumbmodal img{
+  width: 150px; 
+   height:100px;
+     object-fit: cover;
+}
+
 .events{
 padding-left: 40px;
 }
 
+/*---------------Page event---------*/
+
+.event{
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.eventHeader{
+background-color:#4099FF;
+color: #fff !important;
+text-align: center;
+font-size: 30px;
+}
+
+.text-justify{
+    font-size: 18px;
+}
 bg-1 {
       background: #4099FF;
       color: #bdbdbd;
@@ -329,6 +353,10 @@ color:#4099FF;
 
 #mainFooter{
 background-color: #404C4C;
+}
+
+.footerWidget p{
+font-size: 14px;    
 }
 
 .socialNetwork{
