@@ -10,6 +10,9 @@ class Event {
 	private $image;
     private $desc;
 	
+	public function __toString(){
+		return $this->id."-".$this->title."-"."[".$this->dateEv->format("Y-m-d")."]";
+	}
 	public function getId() {
         return $this->id;
     }

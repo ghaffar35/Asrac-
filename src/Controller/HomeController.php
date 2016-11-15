@@ -9,9 +9,32 @@ class HomeController {
     public function indexAction(Application $app) {
         $articles = $app['dao.article']->findAll();
 		$events = $app['dao.event']->findByDate();
+		$result = [];
+		$date = new \DateTime();
+		foreach($events as $event){
+			$month = $event->getDateEv()->format('m');
+			if(!array_key_exists($month, $result)){
+				$result[$month] = [];
+			}
+			array_push($result[$month], $event);
+		}
+
         return $app['twig']->render('index.html.twig', array('articles' => $articles,
-			'events' => $events
+			'events' => $result,
+			'months' => ['01'=> 'Janvier', 
+						 '02'=>'Fevrier', 
+						 '03'=>'Mars',
+						 '04'=>'Avril', 
+						 '05'=>'Mai',
+						 '06'=>'Juin', 
+						 '07'=>'Juillet',
+						 '08'=>'Aout',
+						 '09'=>'Septembre',
+						 '10'=>'Octobre',
+						 '11'=>'Novembre', 
+						 '12'=>'Décembre']												
 			));
+		
     }
 
 	public function allArticles(Application $app) {

@@ -25,8 +25,8 @@ class EventDAO extends DAO {
     public function findByDate() {
 		$date = new \DateTime();
 		$endDate = new \DateTime();
-		$endDate->add(new \DateInterval('P6M'));
-        $sql = "select * from Event where ev_date BETWEEN '".$date->format('Y-m-d')."' AND '".$endDate->format('Y-m-d')."' order by ev_id desc";
+		$endDate->add(new \DateInterval('P3M'));
+        $sql = "select * from Event where ev_date BETWEEN '".$date->format('Y-m-d')."' AND '".$endDate->format('Y-m-d')."' order by ev_date asc";
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
