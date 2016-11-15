@@ -8,6 +8,9 @@ $app->get('/actualite', "Asrac\Controller\HomeController::allArticles")->bind('a
 // Detailed info about an article
 $app->match('/article/{id}', "Asrac\Controller\HomeController::articleAction")->bind('article');
 
+// Detailed info about an event
+$app->match('/event/{id}', "Asrac\Controller\HomeController::eventAction")->bind('event');
+
 // Login form
 $app->get('/login', "Asrac\Controller\HomeController::loginAction")->bind('login');
 

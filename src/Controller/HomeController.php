@@ -47,6 +47,11 @@ class HomeController {
 		return $app['twig']->render('article.html.twig', array('article' => $article));
 	}
 
+	public function eventAction($id, Request $request, Application $app) {
+        $event = $app['dao.event']->find($id);
+		return $app['twig']->render('event.html.twig', array('event' => $event));
+	}
+
 	public function loginAction(Request $request, Application $app) {
         return $app['twig']->render('login.html.twig', array(
             'error'         => $app['security.last_error']($request),
