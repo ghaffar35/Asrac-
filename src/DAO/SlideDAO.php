@@ -30,4 +30,14 @@ class SlideDAO extends DAO {
         else
             throw new \Exception("No slide matching id " . $id);
     }
+
+	// Creates an Slide object based on a DB row.
+    protected function buildDomainObject($row) {
+        $slide = new Slide();
+        $slide->setId($row['sl_id']);
+        $slide->setTitle($row['sl_title']);
+        $slide->setSubTitle($row['sl_subTitle']);
+		$slide->setImage($row['sl_image']);
+        return $slide;
+    }
 }
