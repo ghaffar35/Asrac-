@@ -19,4 +19,15 @@ class SlideDAO extends DAO {
         }
         return $slides;
     }
+
+	//Return one Slide with id
+	public function find($id) {
+        $sql = "select * from Slide where sl_id=?";
+        $row = $this->getDb()->fetchAssoc($sql, array($id));
+
+        if ($row)
+            return $this->buildDomainObject($row);
+        else
+            throw new \Exception("No slide matching id " . $id);
+    }
 }
