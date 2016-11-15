@@ -165,8 +165,38 @@
             </ul>
         </div>
                
-            <!-- Modal agenda mois-->
-            
+            <!-- Modal agenda mois--> 
+			{% for key, array_event in events %}
+            <div class="modal fade" id="{{ key }}" role="dialog" data-month='12'>
+                <div class="modal-dialog">
+					
+                    <!-- Modal content-->
+                    <div class="modal-content" >
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <h2><i class="fa fa-calendar" aria-hidden="true"></i> Agenda</h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row text-center">
+								{% for event in array_event  %} 
+									
+									<div class="col-sm-4">
+										<div class="thumbnail thumbmodal">
+											
+											<p><strong>{{event.Title}} x</strong></p>
+											<p><strong>{{event.lieu}}</strong></p>
+											<p>{{event.dateEv|date('d-m-Y')}}</p>
+											<button class="btn" data-toggle="modal" data-target="#Modal2">+ de détails</button>
+										</div>
+									</div>
+									
+								{% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			{% endfor %}
             <!-- modal agenda jour -->
             <div class="modal fade" id="Modal2" role="dialog">
                 <div class="modal-dialog">

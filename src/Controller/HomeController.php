@@ -18,17 +18,23 @@ class HomeController {
 			}
 			array_push($result[$month], $event);
 		}
-//		$app['monolog']->addInfo(join(',', array_keys($result)));
-//		foreach($result as $key => $value){
-//			$app['monolog']->addInfo($key."-->");
-//			$app['monolog']->addInfo(join(',',$value));
-//
-//		}
 
         return $app['twig']->render('index.html.twig', array('articles' => $articles,
 			'events' => $result,
-			'months' => ['01'=> 'Janvier', '11'=>'Novembre', '12'=>'Décembre']												
+			'months' => ['01'=> 'Janvier', 
+						 '02'=>'Fevrier', 
+						 '03'=>'Mars',
+						 '04'=>'Avril', 
+						 '05'=>'Mai',
+						 '06'=>'Juin', 
+						 '07'=>'Juillet',
+						 '08'=>'Aout',
+						 '09'=>'Septembre',
+						 '10'=>'Octobre',
+						 '11'=>'Novembre', 
+						 '12'=>'Décembre']												
 			));
+		
     }
 
 	public function allArticles(Application $app) {
