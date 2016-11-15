@@ -66,24 +66,19 @@ class HomeController {
 		$objet = trim($_POST['name']);
 		$message = trim($_POST['msg']);
 
-		if (isset($_POST['envoye']))
-		{
-			if (empty($mailEnv) || empty($header) || empty($objet) || empty($message)) //verifie si il y a quelque chose dans les input
-			{  
+		if (isset($_POST['envoye'])) {
+			if (empty($mailEnv) || empty($header) || empty($objet) || empty($message)) {
 				echo "Tout les champs doivent être renseignés<br/>";
 			} 
-			else if (mail($mail, $objet, $message, $header)) //envoie le mail et met en place un cookie
-			{
+			else if (mail($mail, $objet, $message, $header)) {
 				$alert = "E-mail envoyé avec succès";
 				setcookie("sent", "1", time() + 120);
 			}
-			else //affiche un message d'erreur si sa ne s'envoi pas
-			{
+			else {
 				$alert = "Erreur d\'envoi de l\'e-mail";
 			}
-
-			echo $alert;
 		}
+		$app['session']->getFlashBag()->add('success', 'E-mail envoyé avec succès');
 		return $app->redirect($app['url_generator']->generate('home'));
 	}
 }

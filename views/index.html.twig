@@ -4,6 +4,11 @@
 
 {% block content %}
 
+{% for flashMessage in app.session.flashbag.get('success') %}
+		<div class="alert alert-success">
+			{{ flashMessage }}
+		</div>
+{% endfor %}
 
   <div class="carousel fade-carousel slide carou" data-ride="carousel" data-interval="4000" id="bs-carousel">
    
@@ -47,7 +52,7 @@
       </div>
     </div>
   </div> 
-</div>   
+</div>
       
             <!--Actualités-->
             <section class=" container actualite text-center">
