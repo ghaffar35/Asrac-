@@ -11,6 +11,9 @@ $app->match('/article/{id}', "Asrac\Controller\HomeController::articleAction")->
 // Detailed info about an event
 $app->match('/event/{id}', "Asrac\Controller\HomeController::eventAction")->bind('event');
 
+// mail form
+$app->post('/mail', "Asrac\Controller\HomeController::mailAction")->bind('mail');
+
 // Login form
 $app->get('/login', "Asrac\Controller\HomeController::loginAction")->bind('login');
 

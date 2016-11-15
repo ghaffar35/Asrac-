@@ -245,19 +245,21 @@
       <div class="row">
        <i class="fa fa-paper-plane-o fa-3x" aria-hidden="true"></i>
         <h2 class="titrecontact"> Nous contactez</h2>
+		<form method="post" action="{{ path('mail') }}">
         <div class="col-sm-6 form-group">
           <input class="form-control" id="name" name="name" placeholder="Nom-Prenom" type="text" required>
         </div>
         <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+          <input class="form-control" id="email" name="adresse" placeholder="Email" type="email" required>
         </div>
       </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Message" rows="5"></textarea><br>
+      <textarea class="form-control" id="comments" name="msg" placeholder="Message" rows="5"></textarea><br>
       <div class="row">
         <div class="col-sm-12 form-group text-center">
           <button class="btn btn-hero btn-lg indexbtn" type="submit">Envoyer</button>
         </div>
       </div>
+	</form>
     </div>
   </div>
 </section>

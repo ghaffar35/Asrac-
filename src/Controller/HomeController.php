@@ -58,4 +58,32 @@ class HomeController {
             'last_username' => $app['session']->get('_security.last_username'),
             ));
     }
+	
+	public function mailAction(Request $request, Application $app) {
+		$mail = 'youness.chetoui@gmail.com';
+		$mailEnv = trim($_POST['adresse']);
+		$header = 'From:'.$mailEnv. "\r\n" .
+		$objet = trim($_POST['name']);
+		$message = trim($_POST['msg']);
+
+		if (isset($_POST['envoye']))
+		{
+			if (empty($mailEnv) || empty($header) || empty($objet) || empty($message)) //verifie si il y a quelque chose dans les input
+			{  
+				echo "Tout les champs doivent être renseignés<br/>";
+			} 
+			else if (mail($mail, $objet, $message, $header)) //envoie le mail et met en place un cookie
+			{
+				$alert = "E-mail envoyé avec succès";
+				setcookie("sent", "1", time() + 120);
+			}
+			else //affiche un message d'erreur si sa ne s'envoi pas
+			{
+				$alert = "Erreur d\'envoi de l\'e-mail";
+			}
+
+			echo $alert;
+		}
+		return $app->redirect($app['url_generator']->generate('home'));
+	}
 }
