@@ -179,17 +179,15 @@
                         <div class="modal-body">
                             <div class="row text-center">
 								{% for event in array_event  %} 
-									
 									<div class="col-sm-4">
 										<div class="thumbnail thumbmodal">
-											
+											<img src="{{ app.request.basepath }}/images/{{event.image}}" alt="{{event.image}}" width="700" height="500">
 											<p><strong>{{event.Title}} x</strong></p>
 											<p><strong>{{event.lieu}}</strong></p>
 											<p>{{event.dateEv|date('d-m-Y')}}</p>
 											<button class="btn" data-toggle="modal" data-target="#Modal2">+ de détails</button>
 										</div>
 									</div>
-									
 								{% endfor %}
                             </div>
                         </div>
