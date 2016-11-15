@@ -196,7 +196,7 @@ font-size: 16px; /*Police du texte*/
 
 
 .asso{
-    background-color:#4099FF;
+    background-color:#404C4C;
     border: 2px;
     border-color: #404C4C;
     width: 100%;
@@ -218,11 +218,11 @@ border:10px solid #fff;
 }
 
 .asso h2, p{
-    color:#404C4C;
+    color:whitesmoke;
 }
 
-h3{
-    color: #404C4C;
+h3, h1{
+    color: #4099FF;
 }
 
 
@@ -244,6 +244,10 @@ h3{
 
 .events{
 padding-left: 40px;
+}
+
+.events li{
+cursor: pointer;
 }
 
 /*---------------Page event---------*/
@@ -314,12 +318,16 @@ bg-1 {
   }
 
 .indexbtn{
-  background-color: #1ABC9C;
     width: 200px;
 }
+
+.indexbtn:hover{
+    color: #4099FF;
+}
+
 /*--------charte------------*/
 .jumbotron{
-background-color:#4099FF;
+background-color:#404C4C;
     padding-top: 80px;
     padding-bottom: 100px;
 }
@@ -369,6 +377,45 @@ font-size: 14px;
 
 
 /*------------------Animation-----------------*/
+
+.i1, .i3 {
+  color: #4099FF;	
+	-webkit-animation-name: bounceIn; 
+    -webkit-animation-duration: 20s; 
+    animation-name: bounceIn;
+    animation-duration: 20s;
+}
+
+@-webkit-keyframes bounceIn {
+    from {color: #333;}
+    to {color: #4099FF;}
+}
+
+@keyframes bounceIn {
+    from {color:#333;}
+    to {color: #4099FF;}  
+    
+}
+
+.i2{
+    
+  color: #4099FF;	
+	-webkit-animation-name: bounceIn; 
+    -webkit-animation-duration: 20s; 
+    animation-name: bounceIn;
+    animation-duration: 20s;
+}
+
+@-webkit-keyframes bounceIn {
+    from {color: #333;}
+    to {color: #4099FF;}
+}
+
+@keyframes bounceIn {
+    from {color:#333;}
+    to {color:#4099FF ;}  
+    
+}
 
 
 /************** css Admin zone ****************/
