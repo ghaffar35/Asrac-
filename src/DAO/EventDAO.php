@@ -6,7 +6,6 @@ use Asrac\Domain\Event;
 
 class EventDAO extends DAO {
 
-	
 	// Return a list of all event, sorted by id (most recent first). 
     public function findAll() { 
         $sql = "select * from Event order by ev_id desc"; 
