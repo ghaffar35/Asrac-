@@ -47,3 +47,12 @@ $app->match('/admin/event/{id}/edit', "Asrac\Controller\AdminController::editEve
 // Remove a event
 $app->get('/admin/event/{id}/delete', "Asrac\Controller\AdminController::deleteEventAction")->bind('admin_event_delete');
 
+// Add a slide
+$app->match('/admin/slide/add', "Asrac\Controller\AdminController::addSlideAction")->bind('admin_slide_add');
+
+// Edit an existing slide
+$app->match('/admin/slide/{id}/edit', "Asrac\Controller\AdminController::editSlideAction")->bind('admin_slide_edit');
+
+// Remove a slide
+$app->get('/admin/slide/{id}/delete', "Asrac\Controller\AdminController::deleteSlideAction")->bind('admin_slide_delete');
+

@@ -186,5 +186,62 @@ class AdminController {
         // Redirect to admin home page
         return $app->redirect($app['url_generator']->generate('admin'));
     }
+
+	public function addSlideAction(Request $request, Application $app) {
+			$slide = new Slide();
+			$slideForm = $app['form.factory']->create(new SlideType(), $slide);
+			$slideForm->handleRequest($request);
+			if ($request->isMethod('POST')) {
+				if ($slideForm->isValid()) {
+					$image = $request->files->get($slideForm->getName());
+					/* Make sure that Upload Directory is properly configured and writable */
+					$path = __DIR__.'/../../web/images';
+					$filename = $image['image']->getClientOriginalName();
+					$image['image']->move($path,$filename);
+					$slide->setImage($filename);
+					$message = 'File was successfully uploaded!';
+				}
+			}
+
+			if ($slideForm->isSubmitted() && $slideForm->isValid()) {
+				$app['dao.slide']->save($slide);
+				$app['session']->getFlashBag()->add('success', 'The event was successfully created.');
+			}
+			return $app['twig']->render('slide_form.html.twig', array(
+				'title' => 'New slide',
+				'slideForm' => $slideForm->createView()));
+	}
+
+	public function editEventAction($id, Request $request, Application $app) {
+        $slide = $app['dao.slide']->find($id);
+        $slideForm = $app['form.factory']->create(new SlideType(), $slide);
+        $slideForm->handleRequest($request);
+		if ($request->isMethod('POST')) {
+				if ($slideForm->isValid()) {
+					$image = $request->files->get($slideForm->getName());
+					/* Make sure that Upload Directory is properly configured and writable */
+					$path = __DIR__.'/../../web/images';
+					$filename = $image['image']->getClientOriginalName();
+					$image['image']->move($path,$filename);
+					$slide->setImage($filename);
+					$message = 'File was successfully uploaded!';
+				}
+			}
+        if ($slideForm->isSubmitted() && $slideForm->isValid()) {
+            $app['dao.slide']->save($slide);
+            $app['session']->getFlashBag()->add('success', 'The event was succesfully updated.');
+        }
+        return $app['twig']->render('slide_form.html.twig', array(
+            'title' => 'Edit slide',
+            'slideForm' => $slideForm->createView()));
+    }
+
+	public function deleteEventAction($id, Application $app) {
+        // Delete the slide
+        $app['dao.slide']->delete($id);
+        $app['session']->getFlashBag()->add('success', 'The event was succesfully removed.');
+        // Redirect to admin home page
+        return $app->redirect($app['url_generator']->generate('admin'));
+    }
 }
 

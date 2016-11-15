@@ -12,7 +12,7 @@ class SlideType extends AbstractType {
             ->add('title', 'text')
             ->add('subTitle', 'text')
 			->add('image', 'file', array(
-                    'data_class' => null
+                	'data_class' => null
 			));
     }
 
