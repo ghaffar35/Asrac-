@@ -85,10 +85,8 @@
             <br>
             <div class="row">
                 <div class="col-sm-4 bureau_haut">
-                     <h3 class="text-center"><strong>Imed Hezzi</strong></h3><br>
-                    <a href="#membre2">
-                        <img src="{{ app.request.basepath }}/images/vice-pdt.png"  class="img-circle person" alt="vice-pdt" width="255" height="255">
-                    </a>
+                    <h3 class="text-center"><strong>Imed Hezzi</strong></h3><br>
+                    <img src="{{ app.request.basepath }}/images/vice-pdt.png"  class="img-circle person" alt="vice-pdt" width="255" height="255">
                     <div id="membre2">
                         <h3>Vice-président</h3>
                         <p>Ut enim ad minim veniam</p>
@@ -97,9 +95,7 @@
                 </div>
                 <div class="col-sm-4 bureau_haut">
                    <h3 class="text-center"><strong>Habib Azaouzi</strong></h3><br>
-                    <a href="#membre">
-                        <img src="{{ app.request.basepath }}/images/president.png" class="img-circle person" alt="Président" width="255" height="255">
-                    </a>
+                    <img src="{{ app.request.basepath }}/images/president.png" class="img-circle person" alt="Président" width="255" height="255">
                     <div id="membre">
                         <h3>Président</h3>
                         <p>Ut enim ad minim veniam</p>
@@ -109,9 +105,7 @@
                 </div>
                 <div class="col-sm-4 bureau_haut">
                     <h3 class="text-center"><strong>David Flamant</strong></h3><br>
-                    <a href="#membre3">
-                        <img src="{{ app.request.basepath }}/images/vice-pdt2.png" class="img-circle person" alt="vice-pdt" width="255" height="255">
-                    </a>
+                    <img src="{{ app.request.basepath }}/images/vice-pdt2.png" class="img-circle person" alt="vice-pdt" width="255" height="255">
                     <div id="membre3">
                         <h3>Vice-président</h3>
                         <p>Ut enim ad minim veniam</p>
@@ -124,9 +118,7 @@
                 <div class="col-sm-4 col-sm-offset-2 text-center bureau_bas">
 
                     <h3 class="text-center"><strong>Smail Altaleb</strong></h3><br>
-                    <a href="#membre4">
-                        <img src="{{ app.request.basepath }}/images/tresorier.png" class="img-circle person" alt="Trésorier" width="255" height="255">
-                    </a>
+					<img src="{{ app.request.basepath }}/images/tresorier.png" class="img-circle person" alt="Trésorier" width="255" height="255">
                     <div id="membre4">
                         <h3>Trésorier</h3>
                         <p>Ut enim ad minim veniam</p>
@@ -135,9 +127,7 @@
                 </div>
                 <div class="col-sm-4 text-center bureau_bas">
                 <h3 class="text-center"><strong>Gwenola Marc</strong></h3><br>
-                    <a href="#membre5">
                         <img src="{{ app.request.basepath }}/images/secretaire.png" class="img-circle person" alt="secretaire" width="255" height="255">
-                    </a>
                     <div id="membre5">
                         <h3>Secrétaire</h3>
                         <p>Ut enim ad minim veniam</p>
@@ -150,16 +140,12 @@
     
     <!--Evenement-->
     <section class="container text-center evenements">
-<!--	{% for event in events %}-->
-<!--		{% endfor %}-->
         <div id="tour" class="bg-1 text-center">
                <i class="fa fa-calendar-o fa-3x i1" aria-hidden="true"></i>
                 <h2 class="text-center">Nos Events</h2>
-
                 <p class="text-center">Lorem ipsum we'll play you some music.<br> Lorem ipsum we'll play you some music</p>
-
          <div class="row">    
-            <ul class="col-sm-12 list-group ">
+            <ul class="col-md-8 col-md-offset-2 list-group text-center events">
 					{% for key, array_event in events %} 
                     <li class="list-group-item" data-toggle="modal" data-target="#{{ key }}">{{ months[key] }}<span class="badge">{{ array_event|length }}</span></li>
                     
