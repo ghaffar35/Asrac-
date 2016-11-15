@@ -60,7 +60,7 @@ class HomeController {
     }
 	
 	public function mailAction(Request $request, Application $app) {
-		$mail = 'youness.chetoui@gmail.com';
+		$mail = 'example@example.com';
 		$mailEnv = trim($_POST['adresse']);
 		$header = 'From:'.$mailEnv. "\r\n" .
 		$objet = trim($_POST['name']);
