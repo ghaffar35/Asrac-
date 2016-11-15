@@ -10,14 +10,18 @@ use Asrac\Domain\User;
 use Asrac\Form\Type\UserType;
 use Asrac\Domain\Event;
 use Asrac\Form\Type\EventType;
+use Asrac\Domain\Slide;
+use Asrac\Form\Type\SlideType;
 
 class AdminController {
 
 	public function indexAction(Application $app) {
         $articles = $app['dao.article']->findAll();
+		$slides = $app['dao.slide']->findAll();
 		$users = $app['dao.user']->findAll();
 		$events = $app['dao.event']->findAll();
         return $app['twig']->render('admin.html.twig', array(
+			'slides' => $slides,
             'articles' => $articles,
 			'users' => $users,
 			'events' => $events));
@@ -212,7 +216,7 @@ class AdminController {
 				'slideForm' => $slideForm->createView()));
 	}
 
-	public function editEventAction($id, Request $request, Application $app) {
+	public function editSlideAction($id, Request $request, Application $app) {
         $slide = $app['dao.slide']->find($id);
         $slideForm = $app['form.factory']->create(new SlideType(), $slide);
         $slideForm->handleRequest($request);
@@ -236,7 +240,7 @@ class AdminController {
             'slideForm' => $slideForm->createView()));
     }
 
-	public function deleteEventAction($id, Application $app) {
+	public function deleteSlideAction($id, Application $app) {
         // Delete the slide
         $app['dao.slide']->delete($id);
         $app['session']->getFlashBag()->add('success', 'The event was succesfully removed.');
