@@ -236,6 +236,12 @@ h3{
     padding-bottom: 500px;
 }
 
+.thumbmodal img{
+  width: 150px; 
+   height:100px;
+     object-fit: cover;
+}
+
 .events{
 padding-left: 40px;
 }

@@ -140,7 +140,7 @@
     
     <!--Evenement-->
     <section class="container text-center evenements">
-        <div id="tour" class="bg-1 text-center">
+        <div id="evenements" class="bg-1 text-center">
                <i class="fa fa-calendar-o fa-3x i1" aria-hidden="true"></i>
                 <h2 class="text-center">Nos Events</h2>
                 <p class="text-center">Lorem ipsum we'll play you some music.<br> Lorem ipsum we'll play you some music</p>
@@ -170,7 +170,7 @@
 								{% for event in array_event  %} 
 									<div class="col-sm-4">
 										<div class="thumbnail thumbmodal">
-											<img src="{{ app.request.basepath }}/images/{{event.image}}" alt="{{event.image}}" width="700" height="500">
+											<img src="{{ app.request.basepath }}/images/{{event.image}}" alt="{{event.image}}" width="150px" height="100px">
 											<p><strong>{{event.Title}} x</strong></p>
 											<p><strong>{{event.lieu}}</strong></p>
 											<p>{{event.dateEv|date('d-m-Y')}}</p>
