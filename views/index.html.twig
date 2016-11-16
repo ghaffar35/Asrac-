@@ -213,17 +213,22 @@
                    <div class = "container text-center">
                          <i class="fa fa-file-o fa-3x i2" aria-hidden="true"></i>
                           <h2>Notre Charte</h2>
-                          <p>Nos Valeurs</p>
-                          <p class="telechargementcharte">
-                          <a href ="{{ app.request.basepath }}/images/Charte.pdf" class = "btn btn-lg indexbtn3" role = "button">Telecharger</a>
+                          <p class="telechargementCharte">
+                          <a href ="{{ app.request.basepath }}/images/Charte.pdf" class = "btn btn-lg indexbtn3" title ="Télécharger notre charte" role = "button">Telecharger</a>
                           </p>
+                        <div class="adhesion"></div>
+                          <h2>Adhérer</h2>
+                          <p class="telechargementAdhesion">
+                          <a href ="{{ app.request.basepath }}/images/Bulletin adhésion 2016.pdf" class = "btn btn-lg indexbtn3" title ="Télécharger notre bulletin d'adhésion" role ="button">Telecharger</a>
+                          </p>
+                        </div>
                    </div>
                 </div>
             </section>
     
     <!--Formulaire de contact-->
     
-            <section class=" contact container text-center">
+            <section id="formulaire" class="contact container text-center">
                   <div class="row">
                         <div class="col-md-6 col-md-offset-3">
                               <div class="row">

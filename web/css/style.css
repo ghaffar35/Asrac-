@@ -167,8 +167,6 @@ font-size: 16px; /*Police du texte*/
 }
 
 
-
-
 /*****************************************/
 /*        Page Article solo             */
 /***************************************/
@@ -181,6 +179,8 @@ font-size: 16px; /*Police du texte*/
 .article img{
     width: 100%;
     height: 50%;
+    object-fit: cover;
+}
 }
 
 .article .date{
@@ -374,10 +374,17 @@ background-color:#404C4C;
     color:#4099FF;
 }
 
-.telechargementcharte{
-    margin-top: 60px;
+.telechargementCharte{
+    margin-top: 20px;
 }
 
+.telechargementAdhesion{
+    margin-top: 20px;
+}
+
+.adhesion{
+    margin-top: 60px;
+}
 
 /*************************************************/
 /*               Formulaire de contact          */
