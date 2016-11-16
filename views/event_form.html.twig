@@ -56,12 +56,14 @@
 		</div>
 		<div class="form-group">
 			{{ form_label(eventForm.desc, null, { 'label_attr':  {
-				'class': 'control-label',
-				'rows': '8'
+				'class': 'col-sm-4 control-label'
 			}}) }}
 			<div class="col-sm-6">
 				{{ form_errors(eventForm.desc) }}
-				{{ form_widget(eventForm.desc) }}
+				{{ form_widget(eventForm.desc, { 'attr':  {
+					'class': 'form-control',
+					'rows': '8'
+				}}) }}
 			</div>
 		</div>
 		<div class="form-group">
