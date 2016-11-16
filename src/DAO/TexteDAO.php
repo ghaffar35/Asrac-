@@ -19,6 +19,16 @@ class TexteDAO extends DAO {
         }
         return $texte;
     }
+	
+	public function find($id) {
+        $sql = "select * from Texte where te_id=?";
+        $row = $this->getDb()->fetchAssoc($sql, array($id));
+
+        if ($row)
+            return $this->buildDomainObject($row);
+        else
+            throw new \Exception("No texte matching id " . $id);
+    }
 
 	// Creates an texte object based on a DB row.
     protected function buildDomainObject($row) {
@@ -31,7 +41,7 @@ class TexteDAO extends DAO {
 	// Saves an texte into the database.
     public function save(Texte $texte) {
         $texteData = array(
-            'te_texteDesc' => $texte->getTexteDesc(),
+            'te_texteDesc' => $texte->getTexteDesc()
             );
 
         if ($texte->getId()) {

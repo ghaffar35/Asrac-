@@ -9,7 +9,7 @@ class TexteType extends AbstractType {
 
 	public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-            ->add('Texte description', 'text');
+            ->add('texteDesc', 'textarea');
     }
 
     public function getName() {

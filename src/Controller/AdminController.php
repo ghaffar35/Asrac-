@@ -252,8 +252,8 @@ class AdminController {
         return $app->redirect($app['url_generator']->generate('admin'));
     }
 	
-	public function editTexteAction(Request $request, Application $app) {
-        $texte = $app['dao.texte']->findAll();
+	public function editTexteAction($id, Request $request, Application $app) {
+        $texte = $app['dao.texte']->find($id);
         $texteForm = $app['form.factory']->create(new TexteType(), $texte);
         $texteForm->handleRequest($request);
 		

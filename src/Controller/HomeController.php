@@ -10,7 +10,7 @@ class HomeController {
         $articles = $app['dao.article']->findAll();
 		$slides = $app['dao.slide']->findAll();
 		$events = $app['dao.event']->findByDate();
-		$title = $app['dao.title']->findAll();
+		$texte = $app['dao.texte']->findAll();
 		$result = [];
 		$date = new \DateTime();
 		foreach($events as $event){

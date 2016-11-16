@@ -18,7 +18,7 @@
 				<li><a href="#users" data-toggle="tab">Utilisateurs</a></li>
 				<li><a href="#events" data-toggle="tab">Event</a></li>
 				<li><a href="#slide" data-toggle="tab">Slide</a></li>
-				<li><a href="#texte" data-toggle="tab">Texte</a></li>
+				<li><a href="#texte" data-toggle="tab">Texte Asso</a></li>
 			</ul>
 		</div>
 	</div>
@@ -223,13 +223,13 @@
 				<table class="table table-hover table-condensed">
 					<thead>
 						<tr>
-							<th>Texte</th>
+							<th>Texte Asso</th>
 							<th></th>  <!-- Actions column -->
 						</tr>
 					</thead>
 					{% for textes in texte %}
 					<tr>
-						<td><a class="texteTitle" href="">{{ textes.texteDesc }}</a></td>
+						<td>{{ textes.texteDesc }}</td>
 						<td>
 							<a href="{{ path('admin_texte_edit', { 'id': textes.id }) }}" class="btn btn-info btn-xs btnEdi" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
 						</td>
