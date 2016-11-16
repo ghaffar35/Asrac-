@@ -138,13 +138,15 @@ font-size: 16px; /*Police du texte*/
 
 
 .articles{
-   max-height: 550px;
+    max-height: 580px;
+    margin-bottom: 50px;
 }
 
 .articles img{
-    width: 395px;
-    height: 200px;
-}
+    
+    max-height: 300px;
+    object-fit: cover;
+ }
 
 
 /*****************************************/
@@ -154,6 +156,7 @@ font-size: 16px; /*Police du texte*/
 
 .thumbnailActu{
     margin-top: 100px;
+    
 }
 
 .thumbnailActu p{
@@ -161,8 +164,8 @@ font-size: 16px; /*Police du texte*/
 }
 
 .thumbnailActu img{
-    width:360px;
-    height: 192px;
+   max-height:250px;
+    max-width: 400px;
 
 }
 
@@ -180,7 +183,6 @@ font-size: 16px; /*Police du texte*/
     width: 100%;
     height: 50%;
     object-fit: cover;
-}
 }
 
 .article .date{
