@@ -12,6 +12,8 @@ use Asrac\Domain\Event;
 use Asrac\Form\Type\EventType;
 use Asrac\Domain\Slide;
 use Asrac\Form\Type\SlideType;
+use Asrac\Domain\Texte;
+use Asrac\Form\Type\TexteType;
 
 class AdminController {
 
@@ -20,11 +22,13 @@ class AdminController {
 		$slides = $app['dao.slide']->findAll();
 		$users = $app['dao.user']->findAll();
 		$events = $app['dao.event']->findAll();
+		$texte = $app['dao.texte']->findAll();
         return $app['twig']->render('admin.html.twig', array(
 			'slides' => $slides,
             'articles' => $articles,
 			'users' => $users,
-			'events' => $events));
+			'events' => $events,
+			'texte' => $texte));
     }
 
 	public function addArticleAction(Request $request, Application $app) {
@@ -246,6 +250,20 @@ class AdminController {
         $app['session']->getFlashBag()->add('success', 'The event was succesfully removed.');
         // Redirect to admin home page
         return $app->redirect($app['url_generator']->generate('admin'));
+    }
+	
+	public function editTexteAction(Request $request, Application $app) {
+        $texte = $app['dao.texte']->findAll();
+        $texteForm = $app['form.factory']->create(new TexteType(), $texte);
+        $texteForm->handleRequest($request);
+		
+        if ($texteForm->isSubmitted() && $texteForm->isValid()) {
+            $app['dao.texte']->save($texte);
+            $app['session']->getFlashBag()->add('success', 'The texte was succesfully updated.');
+        }
+        return $app['twig']->render('texte_form.html.twig', array(
+            'title' => 'Edit texte',
+            'texteForm' => $texteForm->createView()));
     }
 }
 
