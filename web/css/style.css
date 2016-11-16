@@ -1,12 +1,12 @@
-/*Couleurs
-Barre de navigation (Couleur Primaire) :#FF9800;
-Navbar - Text :#2F3440;
- */
+
 body{
 font-family: 'Fjalla One', sans-serif;
 }
 
-/*-----Barre de navigation---*/
+/********************************/
+/*       Barre de navigation     */
+/********************************/
+
 .navbar{
   min-height: 60px;
 }
@@ -42,6 +42,8 @@ font-size: 16px; /*Police du texte*/
 .fade-carousel .carousel-inner .item {
     height: 100vh;
 }
+
+/*indicateur caroussel*/
 .fade-carousel .carousel-indicators > li {
     margin: 0 2px;
     background-color: #4099FF;
@@ -54,10 +56,10 @@ font-size: 16px; /*Police du texte*/
   opacity: 1;
 }
 
-/********************************/
-/*          Hero Headers        */
-/********************************/
-.hero {
+/***************************************/
+/*         Contenu texte caroussel    */
+/*************************************/
+.texteCaroussel {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -72,7 +74,7 @@ font-size: 16px; /*Police du texte*/
            -o-transform: translate3d(-50%,-50%,0);
               transform: translate3d(-50%,-50%,0);
 }
-.hero h1 {
+.texteCaroussel h1 {
     font-size: 6em;    
     font-weight: bold;
     margin: 0;
@@ -97,20 +99,6 @@ font-size: 16px; /*Police du texte*/
 }
 
 /********************************/
-/*          Custom Buttons      */
-/********************************/
-.btn.btn-lg {padding: 10px 40px;}
-.btn.btn-hero,
-.btn.btn-hero:hover,
-.btn.btn-hero:focus {
-    color: #f5f5f5;
-    background-color: #404C4C;
-    border-color: #404C4C;
-    outline: none;
-    margin: 20px auto;
-}
-
-/********************************/
 /*       Slides backgrounds     */
 /********************************/
 .fade-carousel .slides .slide-1 img, 
@@ -120,17 +108,6 @@ font-size: 16px; /*Police du texte*/
 	width: 100%;
 }
 
-/*
-.fade-carousel .slides .slide-1 {
-  background-image: url(../images/Conseil_Administration.jpg); 
-}
-.fade-carousel .slides .slide-2 {
-  background-image: url(../images/reunion.jpg);
-}
-.fade-carousel .slides .slide-3 {
-  background-image: url(../images/reunion2.jpg);
-}
-*/
 
 /********************************/
 /*          Media Queries       */
@@ -143,16 +120,9 @@ font-size: 16px; /*Police du texte*/
 }
 
 
-/*-----Actualités------*/
-.actualite h2{
-  margin-bottom: 20px;
-  color: #2F3440;
-}
-
-.articles{
-   max-height: 550px;
-}
-
+/****************************************/
+/*          Actualités page d'acceuil  */
+/**************************************/
 
 .actualite{
     width: 100%;
@@ -161,28 +131,28 @@ font-size: 16px; /*Police du texte*/
     padding-bottom: 100px;
 }
 
+.actualite h2{
+  margin-bottom: 20px;
+  color: #2F3440;
+}
+
+
+.articles{
+   max-height: 550px;
+}
+
 .articles img{
     width: 395px;
     height: 200px;
 }
 
-/*-------------------------------------------------------------------PAGE ARTICLES-----------------*/
-.search{
-  margin-top: 25px;
-  margin-bottom: 30px;
-}
-.search input{
-  float: left;
-}
-.search .checkbox{
-  float: right;
-}
 
-
-/*------------------------------------Page article seul--------------------------*/
+/*****************************************/
+/*        Page avec liste Articles      */
+/***************************************/
 
 .article{
-  margin-top: 80px;
+    margin-top: 80px;
     margin-bottom: 100px;
 }
 
@@ -191,9 +161,18 @@ font-size: 16px; /*Police du texte*/
     height: 5%;
 }
 
+.thumbnailActu{
+    margin-top: 100px;
+}
 
-/*------------------------------------Association-----------------------------------------------*/
+.thumbnailActu p{
+    color:#333;
+}
 
+
+/*************************************************/
+/*            presentation Association          */
+/***********************************************/
 
 .asso{
     background-color:#404C4C;
@@ -204,16 +183,25 @@ font-size: 16px; /*Police du texte*/
     padding-bottom: 70px;
 }
 
-.bureau_haut{
+.asso h2, p{
+    color:whitesmoke;
+}
+
+h3, h1{
+    color: #4099FF;
+}
+
+
+.bureauHaut{
  padding-top: 70px;   
 }
 
-.bureau_bas{
+.bureauBas{
 padding-top: 40px;
 }
 
 .person{
-border:10px solid #fff;
+border:5px solid #fff;
     object-fit: cover;
 }
 
@@ -226,7 +214,11 @@ h3, h1{
 }
 
 
-/*---------------------------------Evenement------------------------------------------------------*/
+
+/*************************************************/
+/*           Evenement partie accueil           */
+/***********************************************/
+
 
 .evenements{
     width: 100%;
@@ -236,10 +228,15 @@ h3, h1{
     padding-bottom: 500px;
 }
 
+.evenementContent p {
+      font-style: italic;
+       padding-bottom: 50px;
+    color: #333;
+}
+
 .thumbmodal img{
   width: 150px; 
    height:100px;
-     object-fit: cover;
 }
 
 .events{
@@ -254,47 +251,55 @@ cursor: pointer;
     background-color: #4099FF;
 }
 
-/*---------------Page event---------*/
+.list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+  }
+.list-group-item:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+  }
+
+
+/*Modal partie event*/
+
+  .modal-header, h4, .close {
+      background-color:#4099FF;
+      color: #fff !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-header, .modal-body {
+      padding: 30px 40px;
+  }
+
+
+/*************************************************/
+/*              Page event                      */
+/***********************************************/
+
 
 .event{
     margin-top: 80px;
     margin-bottom: 100px;
 }
 
+.event h2{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
 .eventHeader{
-background-color:#4099FF;
-color: #fff !important;
-text-align: center;
-font-size: 30px;
+    background-color:#4099FF;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
 }
 
 .text-justify{
     font-size: 18px;
     color: #333;
 }
-bg-1 {
-      background: #4099FF;
-      color: #bdbdbd;
-  }
-  .bg-1 h3 {color: #fff;}
-  .bg-1 p {
-      font-style: italic;
-       padding-bottom: 50px;
-}
-
-.i1{
-    color: #333;
-}
-
-
-  .list-group-item:first-child {
-      border-top-right-radius: 0;
-      border-top-left-radius: 0;
-  }
-  .list-group-item:last-child {
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
-  }
 
   .thumbnail p {
       margin-top: 15px;
@@ -307,20 +312,12 @@ bg-1 {
       border-radius: 0;
       transition: .2s;
   }
-  .thumbnail button:hover, .thumbnail button:focus {
-      border: 1px solid #333;
-      background-color: #fff;
-      color: #000;
-  }
-  .modal-header, h4, .close {
-      background-color:#4099FF;
-      color: #fff !important;
-      text-align: center;
-      font-size: 30px;
-  }
-  .modal-header, .modal-body {
-      padding: 30px 40px;
-  }
+  
+
+/*************************************************/
+/*              Button                          */
+/***********************************************/
+
 
 .indexbtn{
     width: 200px;
@@ -328,20 +325,21 @@ bg-1 {
     color: #4099FF ;
 }
 
-
 .indexbtn:hover{
     background-color:#4099FF;
     color: #404C4C;
 }
 
+/*************************************************/
+/*                charte                        */
+/***********************************************/
 
-/*--------charte------------*/
+
 .jumbotron{
 background-color:#404C4C;
     padding-top: 80px;
     padding-bottom: 100px;
 }
-
 
 .indexbtn3{
     background-color: #4099FF;
@@ -358,7 +356,10 @@ background-color:#404C4C;
 }
 
 
-/*---Formulaire de contact--*/
+/*************************************************/
+/*               Formulaire de contact          */
+/***********************************************/
+
 .contact{
     height: 430px;
     width: 100%;
