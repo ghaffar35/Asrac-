@@ -69,6 +69,10 @@ $app['dao.event'] = $app->share(function ($app) {
     return new Asrac\DAO\EventDAO($app['db']);
 });
 
+$app['dao.slide'] = $app->share(function ($app) {
+    return new Asrac\DAO\SlideDAO($app['db']);
+});
+
 // Register error handler
 $app->error(function (\Exception $e, $code) use ($app) {
     switch ($code) {

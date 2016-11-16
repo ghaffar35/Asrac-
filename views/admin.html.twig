@@ -17,6 +17,7 @@
 				<li class="active"><a href="#articles" data-toggle="tab">Articles</a></li>
 				<li><a href="#users" data-toggle="tab">Utilisateurs</a></li>
 				<li><a href="#events" data-toggle="tab">Event</a></li>
+				<li><a href="#slide" data-toggle="tab">Slide</a></li>
 			</ul>
 		</div>
 	</div>
@@ -166,6 +167,54 @@
 			<div class="alert alert-warning">Aucun event trouvé.</div>
 			{% endif %}
 			<a href="{{ path('admin_event_add') }}"><button type="button" class=" btnAdd btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter un event</button></a>
+		</div>
+		<div class="tab-pane fade adminTable" id="slide">
+			{% if slides %}
+			<div class="table-responsive">
+				<table class="table table-hover table-condensed">
+					<thead>
+						<tr>
+							<th>Titre</th>
+							<th>SubTitle</th>
+							<th>image</th>
+							<th></th>  <!-- Actions column -->
+						</tr>
+					</thead>
+					{% for slide in slides %}
+					<tr>
+						<td><a class="eventTitle" href="">{{ slide.title }}</a></td>
+						<td>{{ slide.subTitle }}</td>
+						<td>{{ slide.image }}</td>
+						<td>
+							<a href="{{ path('admin_slide_edit', { 'id': slide.id }) }}" class="btn btn-info btn-xs btnEdi" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+							<button type="button" class="btn btn-danger btn-xs btnSup" title="Delete" data-toggle="modal" data-target="#slideDialog{{ slide.id }}"><span class="glyphicon glyphicon-remove"></span>
+							</button>
+							<div class="modal fade" id="slideDialog{{ slide.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h4 class="modal-title" id="myModalLabel">Confirmation requise</h4>
+										</div>
+										<div class="modal-body">
+											Voulez-vous vraiment le supprimer ?
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+											<a href="{{ path('admin_slide_delete', { 'id': slide.id }) }}" class="btn btn-danger">Confirmer</a>
+										</div>
+									</div><!-- /.modal-content -->
+								</div><!-- /.modal-dialog -->
+							</div><!-- /.modal -->
+						</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+			{% else %}
+			<div class="alert alert-warning">Aucun slide trouvé.</div>
+			{% endif %}
+			<a href="{{ path('admin_slide_add') }}"><button type="button" class=" btnAdd btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter un slide</button></a>
 		</div>
 	</div>
 </div>
