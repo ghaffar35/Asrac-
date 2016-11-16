@@ -189,7 +189,7 @@
                                             <div class="col-sm-4">
                                                 <div class="thumbnail thumbmodal">
                                                     <img src="{{ app.request.basepath }}/images/{{event.image}}" alt="{{event.image}}" >
-                                                    <p><strong>{{event.Title}} x</strong></p>
+                                                    <p><strong>{{event.Title}}</strong></p>
                                                     <p><strong>{{event.lieu}}</strong></p>
                                                     <p>{{event.dateEv|date('d-m-Y')}}</p>
                                                     <a role="button" class="btn" href ="{{ path('event', { 'id': event.id }) }}" >+ de détails</a>
