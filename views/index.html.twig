@@ -170,7 +170,7 @@
 								{% for event in array_event  %} 
 									<div class="col-sm-4">
 										<div class="thumbnail thumbmodal">
-											<img src="{{ app.request.basepath }}/images/{{event.image}}" alt="{{event.image}}" width="150px" height="100px">
+											<img src="{{ app.request.basepath }}/images/{{event.image}}" alt="{{event.image}}" >
 											<p><strong>{{event.Title}} x</strong></p>
 											<p><strong>{{event.lieu}}</strong></p>
 											<p>{{event.dateEv|date('d-m-Y')}}</p>

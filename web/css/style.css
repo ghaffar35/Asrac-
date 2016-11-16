@@ -317,6 +317,10 @@ bg-1 {
   background-color: #1ABC9C;
     width: 200px;
 }
+
+.indexbtn:hover{
+    color: white;
+}
 /*--------charte------------*/
 .jumbotron{
 background-color:#4099FF;
