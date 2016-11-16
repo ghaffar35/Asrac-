@@ -43,10 +43,10 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ path('all_articles') }}">Actualités</a></li>
-                        <li><a href="#">Evènements</a></li>
+                        <li><a href="#evenements">Evènements</a></li>
                         <li><a href="#">Contact</a></li>
 						{% if app.user and is_granted('ROLE_ADMIN') %}
-    						<li class="{% if adminMenu is defined %}active{% endif %}"><a href="{{ path('admin') }}"><span class="glyphicon glyphicon-cog"></span> Administration</a></li>
+    						<li><a href="{{ path('admin') }}"><span class="glyphicon glyphicon-cog"></span> Administration</a></li>
 						{% endif %}
 						{% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
                         	<li class="dropdown">

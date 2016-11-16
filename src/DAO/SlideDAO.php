@@ -14,7 +14,7 @@ class SlideDAO extends DAO {
         // Convert query result to an array of domain objects
         $slides = array();
         foreach ($result as $row) {
-            $slidesId = $row['ev_id'];
+            $slidesId = $row['sl_id'];
             $slides[$slidesId] = $this->buildDomainObject($row);
         }
         return $slides;
