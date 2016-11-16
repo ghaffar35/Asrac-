@@ -13,7 +13,7 @@
                     <div class="caption">
                         <h2>{{ event.title }}</h2>
                         <h3> {{ event.dateEv|date('d-m-Y') }}</h3>
-                        <h3> <i class="fa fa-map-marker" aria-hidden="true"></i> {{ event.lieu }}</h3>
+                        <h3 class="localisation">{{ event.lieu }}</h3>
                         <p class="text-justify"> <strong>Description :</strong> 
                             {{ event.desc}}
                         </p>

@@ -308,6 +308,10 @@ cursor: pointer;
     margin-bottom: 30px;
 }
 
+.localisation{
+color : #333;
+}
+
 .eventHeader{
     background-color:#4099FF;
     color: #fff !important;
