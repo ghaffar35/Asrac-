@@ -24,7 +24,7 @@ class TexteDAO extends DAO {
     protected function buildDomainObject($row) {
         $texte = new Texte();
         $texte->setId($row['te_id']);
-        $texte->sgetTexteDesc($row['te_texteDesc']);
+        $texte->setTexteDesc($row['te_texteDesc']);
         return $texte;
     }
 

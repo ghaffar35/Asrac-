@@ -21,3 +21,4 @@ class Texte {
     public function setTexteDesc($texteDesc) {
         $this->texteDesc = $texteDesc;
     }
+}

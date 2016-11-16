@@ -56,3 +56,6 @@ $app->match('/admin/slide/{id}/edit', "Asrac\Controller\AdminController::editSli
 // Remove a slide
 $app->get('/admin/slide/{id}/delete', "Asrac\Controller\AdminController::deleteSlideAction")->bind('admin_slide_delete');
 
+// Edit an existing slide
+$app->match('/admin/texte/{id}/edit', "Asrac\Controller\AdminController::editTexteAction")->bind('admin_texte_edit');
+
