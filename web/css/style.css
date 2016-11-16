@@ -101,14 +101,13 @@ font-size: 16px; /*Police du texte*/
 /********************************/
 /*       Slides backgrounds     */
 /********************************/
-.fade-carousel .slides .slide-1, 
-.fade-carousel .slides .slide-2,
-.fade-carousel .slides .slide-3 {
-  height: 100vh;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+.fade-carousel .slides .slide-1 img, 
+.fade-carousel .slides .slide-2 img,
+.fade-carousel .slides .slide-0 img {
+	height: 100%;
+	width: 100%;
 }
+
 
 /********************************/
 /*          Media Queries       */
