@@ -50,7 +50,7 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ path('all_articles') }}">Actualites</a></li>
-                        <li><a href="#evenements">Evenements</a></li>
+                        <li><a href="#evenement">Evenements</a></li>
                         <li><a href="#">Contact</a></li>
 						{% if app.user and is_granted('ROLE_ADMIN') %}
     						<li><a href="{{ path('admin') }}"><span class="glyphicon glyphicon-cog"></span> Administration</a></li>
@@ -73,6 +73,8 @@
     
    <div id="content">{% block content %}{% endblock %}</div>
    
+   <!--------Footer------->
+   
    <footer id="footerWrapper">
 	<section id="mainFooter">
 		<div class="container">
@@ -94,6 +96,7 @@
 							</address>
 						</div>
 					</div>
+					<!-----partie reseaux sociaux------>
 					<div class="col-sm-4">
 						<div class="footerWidgetRight">
 							<h3>Nous suivre</h3>
@@ -107,13 +110,14 @@
 				</div>
 			</div>
 		</section>
+		
+		<!---Mentions légales----->
 		<section id="footerRights">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<p>Copyright © 2016 <a href="{{ app.request.basepath }}/images/mention_legales.pdf" target="blank">Mentions légales</a> / Asrac </p>
 					</div>
-
 				</div>
 			</div>
 		</section>

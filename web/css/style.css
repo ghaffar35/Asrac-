@@ -120,9 +120,9 @@ font-size: 16px; /*Police du texte*/
 }
 
 
-/****************************************/
-/*          Actualités page d'acceuil  */
-/**************************************/
+/*********************************************/
+/*          Actualités page d'acceuil       */
+/*******************************************/
 
 .actualite{
     width: 100%;
@@ -148,18 +148,9 @@ font-size: 16px; /*Police du texte*/
 
 
 /*****************************************/
-/*        Page avec liste Articles      */
+/*        Page Actualités      */
 /***************************************/
 
-.article{
-    margin-top: 80px;
-    margin-bottom: 100px;
-}
-
-.article img{
-    width: 200px;
-    height: 5%;
-}
 
 .thumbnailActu{
     margin-top: 100px;
@@ -168,6 +159,34 @@ font-size: 16px; /*Police du texte*/
 .thumbnailActu p{
     color:#333;
 }
+
+.thumbnailActu img{
+    width:360px;
+    height: 192px;
+
+}
+
+
+
+
+/*****************************************/
+/*        Page Article solo             */
+/***************************************/
+
+.article{
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+
+.article img{
+    width: 100%;
+    height: 50%;
+}
+
+.article .date{
+color: #4099FF;
+}
+
 
 
 /*************************************************/
@@ -289,6 +308,10 @@ cursor: pointer;
     margin-bottom: 30px;
 }
 
+.localisation{
+color : #333;
+}
+
 .eventHeader{
     background-color:#4099FF;
     color: #fff !important;
@@ -371,7 +394,11 @@ background-color:#404C4C;
 padding-bottom: 30px;
 }
 
-/*-------Footer-------------------*/
+
+/*************************************************/
+/*                  Footer                      */
+/***********************************************/
+
 
 #footerWrapper p{
     color: whitesmoke;
@@ -408,13 +435,20 @@ font-size: 14px;
     color: whitesmoke;
 }
 
+.tips:hover{
+color: #4099FF;
+}
 
 #footerRights{
     background-color: #333;
 }
 
 
-/*------------------Animation-----------------*/
+
+/*************************************************/
+/*                  Animation                   */
+/***********************************************/
+
 
 .i1, .i3 {
   color: #4099FF;	
@@ -455,8 +489,10 @@ font-size: 14px;
     
 }
 
+/*************************************************/
+/*                 css Admin zone                */
+/***********************************************/
 
-/************** css Admin zone ****************/
 
 .contentAdmin {
 	margin-top: 80px;
