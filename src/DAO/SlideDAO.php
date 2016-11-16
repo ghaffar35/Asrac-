@@ -44,9 +44,9 @@ class SlideDAO extends DAO {
 	// Saves an Slide into the database.
     public function save(Slide $slide) {
         $slideData = array(
-            'sl_title' => $event->getTitle(),
-            'sl_lieu' => $event->getSubTitle(),
-			'sl_image' => $event->getImage()
+            'sl_title' => $slide->getTitle(),
+            'sl_subTitle' => $slide->getSubTitle(),
+			'sl_image' => $slide->getImage()
             );
 
         if ($slide->getId()) {
