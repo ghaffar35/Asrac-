@@ -21,17 +21,18 @@
   
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
+   {% for slide in slides|slice(0, 3) %}
     <div class="item slides active"> 
-      <div class="slide-1"></div>
+      <div class="slides"><img src="{{ app.request.basepath }}/images/{{ slide.image }}"  alt="{{ slide.image }} "/></div>
       <div class="hero">
         <hgroup>
-            <h1>Evenement x</h1>        
-            <h3>Lorem ipsum</h3>
+            <h1>{{ slide.title }}</h1>        
+            <h3>{{ slide.subTitle }}</h3>
         </hgroup>
-        <button class="btn btn-lg indexbtn" role="button">En savoir +</button>
       </div>
     </div>
-    <div class="item slides">
+    
+    <!--<div class="item slides">
       <div class="slide-2"></div>
       <div class="hero">        
         <hgroup>
@@ -50,7 +51,7 @@
         </hgroup>
         <button class="btn btn-lg indexbtn" role="button">En savoir +</button>
       </div>
-    </div>
+    </div>-->
   </div> 
 </div>
       
@@ -175,7 +176,7 @@
 								{% for event in array_event  %} 
 									<div class="col-sm-4">
 										<div class="thumbnail thumbmodal">
-											<img src="{{ app.request.basepath }}/images/{{event.image}}" alt="{{event.image}}" width="150px" height="100px">
+											<img src="{{ app.request.basepath }}/images/{{event.image}}" alt="{{event.image}}" >
 											<p><strong>{{event.Title}} x</strong></p>
 											<p><strong>{{event.lieu}}</strong></p>
 											<p>{{event.dateEv|date('d-m-Y')}}</p>
