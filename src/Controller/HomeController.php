@@ -10,6 +10,7 @@ class HomeController {
         $articles = $app['dao.article']->findAll();
 		$slides = $app['dao.slide']->findAll();
 		$events = $app['dao.event']->findByDate();
+		$texte = $app['dao.texte']->findAll();
 		$result = [];
 		$date = new \DateTime();
 		foreach($events as $event){
@@ -23,6 +24,7 @@ class HomeController {
         return $app['twig']->render('index.html.twig', array('articles' => $articles,
 			'events' => $result,
 			'slides' => $slides,
+			'texte' => $texte,
 			'months' => ['01'=> 'Janvier', 
 						 '02'=>'Fevrier', 
 						 '03'=>'Mars',
