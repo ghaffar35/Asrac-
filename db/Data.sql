@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 14 Novembre 2016 à 10:03
+-- Généré le :  Mer 16 Novembre 2016 à 10:07
 -- Version du serveur :  5.7.16-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.8-0ubuntu0.16.04.3
 
@@ -32,6 +32,19 @@ INSERT INTO `Article` (`art_id`, `art_title`, `art_content`, `art_image`, `art_d
 (4, 'Bonjour', 'Te enim laborum concursionibus, cernantur ea nulla ullamco. Occaecat elit et \r\n	possumus efflorescere eu est enim duis eu offendit, amet excepteur ingeniis an \r\n		cupidatat iis aliquip est hic sint voluptatibus qui aliqua ex et dolor \r\n		excepteur, ullamco et incurreret te an dolore fore ab fabulas. Amet arbitrantur \r\n			laboris irure consequat, nam enim aliquip. Ipsum aliquip ab singulis, incurreret \r\n				ne summis, est amet esse qui probant aut aut commodo et arbitror quo veniam \r\n					singulis qui fugiat magna, varias tempor ea senserit est an minim quamquam \r\n						concursionibus, varias de occaecat. Velit an ita ipsum aliquip ab dolore \r\n							transferrem proident culpa probant, culpa illustriora consequat labore occaecat \r\n								hic sed commodo consectetur ea litteris duis labore pariatur quem de quid \r\n								cupidatat ingeniis ad et ubi tamen enim nulla an aliquip dolor dolor et dolor. \r\n								Eu varias ubi labore, nostrud e cupidatat se quorum iudicem e consectetur de \r\n									vidisse dolore admodum, officia ubi quem, singulis quis fore arbitror illum, do \r\n										magna reprehenderit, ad dolore malis et eiusmod. Quis possumus vidisse.', 'error_ghost.png', '2011-01-01 00:00:00', 'test'),
 (5, 'test', 'Te enim laborum concursionibus, cernantur ea nulla ullamco. Occaecat elit et \r\n	possumus efflorescere eu est enim duis eu offendit, amet excepteur ingeniis an \r\n		cupidatat iis aliquip est hic sint voluptatibus qui aliqua ex et dolor \r\n		excepteur, ullamco et incurreret te an dolore fore ab fabulas. Amet arbitrantur \r\n			laboris irure consequat, nam enim aliquip. Ipsum aliquip ab singulis, incurreret \r\n				ne summis, est amet esse qui probant aut aut commodo et arbitror quo veniam \r\n					singulis qui fugiat magna, varias tempor ea senserit est an minim quamquam \r\n						concursionibus, varias de occaecat. Velit an ita ipsum aliquip ab dolore \r\n							transferrem proident culpa probant, culpa illustriora consequat labore occaecat \r\n								hic sed commodo consectetur ea litteris duis labore pariatur quem de quid \r\n								cupidatat ingeniis ad et ubi tamen enim nulla an aliquip dolor dolor et dolor. \r\n								Eu varias ubi labore, nostrud e cupidatat se quorum iudicem e consectetur de \r\n									vidisse dolore admodum, officia ubi quem, singulis quis fore arbitror illum, do \r\n										magna reprehenderit, ad dolore malis et eiusmod. Quis possumus vidisse.', 'error_ghost.png', '2011-01-01 00:00:00', 'test'),
 (6, 'test', 'Te enim laborum concursionibus, cernantur ea nulla ullamco. Occaecat elit et possumus efflorescere eu est enim duis eu offendit, amet excepteur ingeniis an cupidatat iis aliquip est hic sint voluptatibus qui aliqua ex et dolor excepteur, ullamco et incurreret te an dolore fore ab fabulas Te enim laborum concursionibus, cernantur ea nulla ullamco. Occaecat elit et possumus efflorescere eu est enim duis eu offendit, amet excepteur ingeniis an cupidatat iis aliquip est hic sint voluptatibus qui aliqua ex et dolor excepteur, ullamco et incurreret te an dolore fore ab fabulas', 'error_ghost.png', '2011-01-01 00:00:00', 'test');
+
+--
+-- Contenu de la table `Event`
+--
+
+INSERT INTO `Event` (`ev_id`, `ev_title`, `ev_lieu`, `ev_date`, `ev_image`, `ev_desc`) VALUES
+(2, 'Test agenda', 'Rennes Nord', '2016-11-16 00:00:00', 'error_ghost.png', 'Deserunt tamen nostrud. Laborum est irure, lorem quibusdam tractavissent et \r\nlaborum malis summis a elit id aut do dolore ullamco, ullamco dolore nostrud \r\ningeniis an ex ullamco o appellat e culpa fabulas comprehenderit, fugiat \r\nquibusdam relinqueret.'),
+(3, 'Test create', 'Face Rennes', '2016-11-18 00:00:00', 'error_ghost.png', 'Deserunt tamen nostrud. Laborum est irure, lorem quibusdam tractavissent et \r\nlaborum malis summis a elit id aut do dolore ullamco, ullamco dolore nostrud \r\ningeniis an ex ullamco o appellat e culpa fabulas comprehenderit, fugiat \r\nquibusdam relinqueret.'),
+(5, 'Test affichage', 'St Jacques', '2016-11-15 00:00:00', 'error_ghost.png', 'I\'m using Symfony2. My controller finds some values - like categories, created by the and gives them to the template. The problem is that if the user hasn\'t any created categories yet, I want to display a massage to invite him to create categories.\r\n\r\nHere is the code:'),
+(6, 'test modal affichage', 'Rennes Est', '2017-01-11 00:00:00', 'error_ghost.png', 'Salut'),
+(7, 'Noel', 'Rennes', '2016-12-25 00:00:00', 'billard.png', 'Fete de noel'),
+(8, 'test janvier', 'Face Rennes', '2017-01-15 00:00:00', 'error_ghost.png', 'Salut'),
+(9, 'test janvier', 'Face Rennes', '2016-12-15 00:00:00', 'error_ghost.png', 'salut');
 
 --
 -- Contenu de la table `User`

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 14 Novembre 2016 à 10:03
+-- Généré le :  Mer 16 Novembre 2016 à 10:06
 -- Version du serveur :  5.7.16-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.8-0ubuntu0.16.04.3
 
@@ -48,7 +48,21 @@ CREATE TABLE `Event` (
   `ev_title` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
   `ev_lieu` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
   `ev_date` datetime NOT NULL,
+  `ev_image` text CHARACTER SET utf8 NOT NULL,
   `ev_desc` text CHARACTER SET utf8mb4 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Slide`
+--
+
+CREATE TABLE `Slide` (
+  `sl_id` int(11) NOT NULL,
+  `sl_title` text CHARACTER SET utf8 NOT NULL,
+  `sl_subTitle` text CHARACTER SET utf8 NOT NULL,
+  `sl_image` text CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -82,6 +96,12 @@ ALTER TABLE `Event`
   ADD PRIMARY KEY (`ev_id`);
 
 --
+-- Index pour la table `Slide`
+--
+ALTER TABLE `Slide`
+  ADD PRIMARY KEY (`sl_id`);
+
+--
 -- Index pour la table `User`
 --
 ALTER TABLE `User`
@@ -100,7 +120,12 @@ ALTER TABLE `Article`
 -- AUTO_INCREMENT pour la table `Event`
 --
 ALTER TABLE `Event`
-  MODIFY `ev_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ev_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT pour la table `Slide`
+--
+ALTER TABLE `Slide`
+  MODIFY `sl_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `User`
 --
