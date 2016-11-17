@@ -145,6 +145,7 @@ font-size: 16px; /*Police du texte*/
 .articles img{
     height:250px;
     max-width: 100%;
+     object-fit: cover;
  }
 
 
@@ -165,7 +166,7 @@ font-size: 16px; /*Police du texte*/
 .thumbnailActu img{
    height:250px;
     max-width: 100%;
-
+object-fit: cover;
 }
 
 
@@ -176,11 +177,6 @@ font-size: 16px; /*Police du texte*/
 .article{
     margin-top: 60px;
     margin-bottom: 100px;
-}
-
-.article img{
- height:250px;
-max-width: 100%;
 }
 
 .article .date{
