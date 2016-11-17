@@ -100,9 +100,10 @@
             
             <section class="container text-center asso">
                     <h1>ASRAC</h1>
+                    <img src="{{ app.request.basepath }}/images/logo.png " alt="vice-pdt" width="150" height="150">
                      <div class="row">
 					{% for textes in texte|slice(0, 1) %}
-                    <p class="col-md-6 col-md-offset-3">{{ textes.texteDesc }}</p>
+                    <p class="col-md-6 col-md-offset-3 texteAsso">{{ textes.texteDesc }}</p>
 					{% endfor %}
                     </div>
                     <br>
