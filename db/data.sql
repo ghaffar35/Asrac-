@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 16 Novembre 2016 à 17:17
+-- Généré le :  Jeu 17 Novembre 2016 à 09:49
 -- Version du serveur :  5.7.16-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.8-0ubuntu0.16.04.3
 
@@ -53,7 +53,7 @@ INSERT INTO `Event` (`ev_id`, `ev_title`, `ev_lieu`, `ev_date`, `ev_image`, `ev_
 INSERT INTO `Slide` (`sl_id`, `sl_title`, `sl_subTitle`, `sl_image`) VALUES
 (2, 'Test slide', 'ipsum Lorem', 'Conseil_Administration.jpg'),
 (3, 'Test slide 2', 'Lorem ipsum', 'reunion.jpg'),
-(4, 'Test slide 3', 'Emrlo sumpi', 'reunion2.jpg');
+(4, 'Test slide 4', 'Emrlo sumpi', 'reunion2.jpg');
 
 --
 -- Contenu de la table `Texte`
