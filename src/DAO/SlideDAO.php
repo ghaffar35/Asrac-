@@ -63,8 +63,8 @@ class SlideDAO extends DAO {
     }
 
 	// Removes an slide from the database.
-    public function delete($id) {
-        // Delete the slide
-        $this->getDb()->delete('Slide', array('sl_id' => $id));
-    }
+//    public function delete($id) {
+//        // Delete the slide
+//        $this->getDb()->delete('Slide', array('sl_id' => $id));
+//    }
 }
