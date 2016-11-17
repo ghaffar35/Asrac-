@@ -75,7 +75,9 @@
                     <!--Article-->
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail articles">
+                            <div class="image">
                             <img src="{{ app.request.basepath }}/images/{{ article.image }}"  alt="{{ article.image }} "/>
+                            </div>
                             <div class="caption">
                                 <h2>
 									<a class="articleTitle" href="{{ path('article', { 'id': article.id }) }}">{{ article.title }}</a>
@@ -89,7 +91,7 @@
                     </div>
 					{% endfor %}
                     <!--Plus d'articles-->
-                    <a href="{{ path('all_articles') }}" class="btn btn-lg indexbtn" role="button"><i class="fa fa-plus" aria-hidden="true"></i> ARTICLES</a>
+                    <a href="{{ path('all_articles') }}" class="btn btn-lg indexbtn text-center" role="button"><i class="fa fa-plus" aria-hidden="true"></i> ARTICLES</a>
                 </div>   <!--Fin row-->
             </section>
             <!--Fin actualité-->
