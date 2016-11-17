@@ -100,9 +100,11 @@
             
             <section class="container text-center asso">
                     <h1>ASRAC</h1>
+                     <div class="row">
 					{% for textes in texte|slice(0, 1) %}
-                    <p class="col-md-8 col-md-offset-2">{{ textes.texteDesc }}</p>
+                    <p class="col-md-6 col-md-offset-3">{{ textes.texteDesc }}</p>
 					{% endfor %}
+                    </div>
                     <br>
                     <div class="row">
                         <div class="col-sm-4 bureauHaut">
