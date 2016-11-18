@@ -260,6 +260,7 @@ h3, h1{
 
 .events{
 padding-left: 40px;
+padding-top: 70px;
 }
 
 .events li{
@@ -524,3 +525,8 @@ color: #4099FF;
   margin-top: 100px; 
 } 
 
+
+.pagination {
+	padding-top: 50px;
+	padding-bottom: 40px;
+}
